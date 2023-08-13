@@ -1,0 +1,51 @@
+{
+    "data" : {
+        "careers": [
+            {
+                "id": 0,
+                "name": "Mostrar todos",
+                "active": true
+            },
+            {
+                "id": 1,
+                "name": "Psicología",
+                "active": true
+            },
+            {
+                "id": 2,
+                "name": "Arquitectura",
+                "active": true
+            },
+            {
+                "id": 3,
+                "name": "Derecho",
+                "active": true
+            },
+            {
+                "id": 4,
+                "name": "Ing. Industrial",
+                "active": true
+            },
+            {
+                "id": 5,
+                "name": "Ing. Sistemas",
+                "active": false
+            },
+            {
+                "id": 6,
+                "name": "Marketing",
+                "active": false
+            },
+            {
+                "id": 7,
+                "name": "Administración",
+                "active": false
+            },
+            {
+                "id": 8,
+                "name": "Economía",
+                "active": false
+            }
+        ]
+    }
+}

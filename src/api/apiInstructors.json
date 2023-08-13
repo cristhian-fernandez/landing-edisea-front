@@ -1,0 +1,24 @@
+{
+    "data" : {
+        "instructors": [
+            {
+                "idInstructor": 1,
+                "name": "Anthony de la Cruz",
+                "description": "Profesor creativo",
+                "active": true
+            },
+            {
+                "idInstructor": 2,
+                "name": "Luis Suarez",
+                "description": "Profesor creativo",
+                "active": true
+            },
+            {
+                "idInstructor": 3,
+                "name": "Luz Morales",
+                "description": "Profesora creativa",
+                "active": true
+            }
+        ]
+    }
+}

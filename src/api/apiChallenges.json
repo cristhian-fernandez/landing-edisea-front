@@ -1,0 +1,57 @@
+{
+    "data" : {
+        "challenges": [
+            {
+                "idChallenge": 1,
+                "name": "Crea una campaña publicitaria para bembos",
+                "description": "Aprenderas a vivir la experiencia de un marketero",
+                "urlImagen": "xxxx",
+                "challengeDate": "12-12-2023 04:00:00",
+                "startDate": "10-12-2023 00:00:00",
+                "finishDate": "12-12-2023 12:59:59",
+                "idCareer": 6,
+                "career": "Marketing",
+                "idLeadInstructor": 1,
+                "idSupportInstructors": [
+                    2,
+                    3
+                ],
+                "active": true
+            },
+            {
+                "idChallenge": 2,
+                "name": "Crea una campaña sistemas para bembos",
+                "description": "Aprenderas a vivir la experiencia de un marketero",
+                "urlImagen": "xxxx",
+                "challengeDate": "12-12-2023 04:00:00",
+                "startDate": "10-12-2023 00:00:00",
+                "finishDate": "12-12-2023 12:59:59",
+                "idCareer": 5,
+                "career": "Ing. Sistemas",
+                "idLeadInstructor": 1,
+                "idSupportInstructors": [
+                    2,
+                    3
+                ],
+                "active": true
+            },
+            {
+                "idChallenge": 3,
+                "name": "Crea una campaña arquitectura para bembos",
+                "description": "Aprenderas a vivir la experiencia de un marketero",
+                "urlImagen": "xxxx",
+                "challengeDate": "12-12-2023 04:00:00",
+                "startDate": "10-12-2023 00:00:00",
+                "finishDate": "12-12-2023 12:59:59",
+                "idCareer": 2,
+                "career": "Arquitectura",
+                "idLeadInstructor": 1,
+                "idSupportInstructors": [
+                    2,
+                    3
+                ],
+                "active": true
+            }
+        ]
+    }
+}

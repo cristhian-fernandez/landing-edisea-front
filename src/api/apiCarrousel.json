@@ -1,0 +1,49 @@
+{
+    "data" : {
+        "rowOne": [
+            "Quiero descubrir qué estudiar",
+            "Deseo explorar diferentes carreras",
+            "Quiero elegir una carrera con alta demanda",		
+            "Quiero identificar la carrera adecuada para mí",	
+            "Descubrir carreras relacionadas con salud",
+            "Quiero una carrera que ofrezca posibilidades de viajar",
+            "Conocer oportunidades laborales para abogados",
+            "Conocer carreras en el campo de negocios",
+            "Conocer oportunidades laborales para economistas",
+            "Investigar opciones en el diseño gráfico.",
+            "Asegurarme si me gusta la carrera de medicina",
+            "Conocer oportunidades laborales en psicología",
+            "Confirmar si el marketing será mi pasión"
+        ],
+        "rowTwo": [
+            "Quiero conocer la carrera de Medicina",
+            "Quiero explorar trabajos en Administración",
+            "Explorar trabajos si estudio Derecho",
+            "Explorar oportunidades laborales para Marketing",
+            "Quiero conocer la carrera de Arquitectura",
+            "Explorar trabajos si estudio Computación",
+            "Decidir en qué trabajar si soy economista",	
+            "Explorar trabajos en Contabilidad",
+            "Conocer oportunidades laborales para Sistemas",
+            "Quiero conocer la carrera de Educación",
+            "Quiero entender más de la carrera de Arte",
+            "Explorar trabajos en Negocios Internacionales",
+            "Decidir en qué trabajar si estudio enfermería",
+            "Quiero conocer la carrera de Comunicación"
+        ],
+        "rowThree": [
+            "Quiero elegir una carrera que me apasione",	
+            "Explorar carreras con oportunidades de viaje",		
+            "Determinar si tengo aptitudes para ser ingeniero/a",
+            "Determinar si tengo aptitudes para ser abogado/a", 
+            "Explorar trabajos en Ing. Industrial", 
+            "Determinar si tengo aptitudes para ser administrador/a",		
+            "Confirmar si la arquitectura será mi pasión",
+            "Decidir en qué trabajar si soy abogado/a",
+            "Decidir según mi pasión por las matemáticas",		
+            "Explorar trabajos en el periodismo",
+            "Decidir qué carrera tiene impacto en el turismo",
+            "Quiero explorar la carrera de Nutrición"
+        ]
+    }
+}

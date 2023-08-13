@@ -1,0 +1,113 @@
+.banner {
+    position: relative;
+}
+.banner_picture {
+    position: relative;
+}
+.banner_description{
+    text-align: center;
+    background-color: var(--banner-bg);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: var(--body-padding-left);
+    padding-right: var(--body-padding-right);
+}
+
+.banner_description h1{
+    font-size: var(--h2-font-size);
+    margin-bottom: 0;
+}
+.banner_description h2{
+    color: var(--white-color);
+    font-size: var(--h4-font-size);
+    text-align: center;
+}
+.banner_title{
+    color: var(--white-color);
+    font-size: var(--smaller-font-size);
+    font-weight: 800;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.banner_live{
+    display: inline-block;
+    height: 16px;
+    border-radius: 10px;
+    padding: 2px 8px;
+    background-color: var(--third-color-dark);
+    position: relative;
+    top: 15px;
+    margin-left: 5px;
+}
+.live__icon{
+    display: inline-flex;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--white-color);
+    margin-right: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+    .banner_picture {
+        background-color: var(--banner-bg);
+    }
+    .banner_picture picture{
+        background-color: var(--banner-bg);
+    }
+    .banner_picture::before {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        inset: 0px;
+        background: linear-gradient(rgb(24, 27, 50) 0%, rgba(24, 27, 50, 0) 100%);
+        transform: rotate(180deg);
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .banner_description{
+        position: absolute;
+        background-color: transparent;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 300px;
+        height: 100%;
+    }
+    .banner_description h2{
+        text-align: left;
+    }
+}
+@media only screen and (min-width: 950px) {
+    .banner_description{
+        width: 400px;
+    }
+    .banner_description h1{
+        font-size: var(--h1-font-size);
+    }
+    .banner_description h2{
+        font-size: var(--h3-font-size);
+    }
+    .banner_live{
+        top: 20px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .banner_description{
+        width: 500px;
+    }
+    .banner_description h1{
+        font-size: var(--bigger-font-size);
+    }
+    .banner_description h2{
+        font-size: var(--h2-font-size);
+    } 
+    .banner_live{
+        top: 30px;
+    }
+}

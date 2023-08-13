@@ -1,0 +1,3 @@
+export const GET_CAREERS = "GET_CAREERS";
+export const GET_COUNTRIES = "GET_COUNTRIES";
+export const GET_DATA_CARROUSEL = "GET_DATA_CARROUSEL";
