@@ -1,37 +1,41 @@
 import { useState, useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { SearchIcon } from './../icons'
-// import { searchTests, searchTestsExamen } from '../../redux/actions/actions';
 import styles from  './../../styles/SearchBar.module.css';
+import { searchChallenges, searchWords, selectCareer } from '../../redux/actions';
 
 const SearchBar = () => {
-    const [search, setSearch] = useState('');
-    // const dispatch = useDispatch();
+    const search = useSelector((state:any) => state.searchWords);
+    const dispatch:any = useDispatch();
     const [placeholderText, setPlaceholderText] = useState('Buscar por nombre del reto o nombre de la carrera ...');
 
+    useEffect(() => {
+      dispatch(searchWords(''));
+  }, [dispatch]);
+
     const onInputChange = (e: any) => {
-        // dispatch(searchTests(search));
-        setSearch(e.target.value);
-        console.log('onInputChange',e.target.value)
+      dispatch(searchChallenges(e.target.value));
+      dispatch(selectCareer(-1));
+      dispatch(searchWords(e.target.value));
     }
 
     useEffect(() => {
-        const updatePlaceholderText = () => {
-          if (window.innerWidth < 600) {
-            setPlaceholderText('Buscar por nombre de reto o carrera ...');
-          } else {
-            setPlaceholderText('Buscar por nombre del reto o nombre de la carrera ...');
-          }
-        };
+      const updatePlaceholderText = () => {
+        if (window.innerWidth < 600) {
+          setPlaceholderText('Buscar por nombre de reto o carrera ...');
+        } else {
+          setPlaceholderText('Buscar por nombre del reto o nombre de la carrera ...');
+        }
+      };
     
-        updatePlaceholderText();
-    
-        window.addEventListener('resize', updatePlaceholderText);
-    
-        return () => {
-          window.removeEventListener('resize', updatePlaceholderText);
-        };
-      }, []);
+      updatePlaceholderText();
+  
+      window.addEventListener('resize', updatePlaceholderText);
+  
+      return () => {
+        window.removeEventListener('resize', updatePlaceholderText);
+      };
+    }, []);
 
     return (
         <div>
