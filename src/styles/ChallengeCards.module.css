@@ -1,0 +1,30 @@
+.cards_challenge{
+    padding-left: var(--body-padding-left);
+    padding-right: var(--body-padding-right);
+    display: grid;
+    gap: 1.1em;
+}
+
+@media (min-width: 601px) {
+    .cards_challenge {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 950px) {
+    .cards_challenge {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .cards_challenge {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1400px) {
+    .cards_challenge {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

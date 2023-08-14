@@ -1,35 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styles from  './../../../styles/Menu.module.css';
 import { ArrowRight, ArrowLeft } from './../../icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllCareers, searchChallenges, searchChallengesCareer, searchWords, selectCareer } from './../../../redux/actions';
+import { CareersProps } from './../../../types'
 
 const MenuSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleNames, setVisibleNames] = useState(5);
-  const [selectedCareer, setSelectedCareer] = useState(0);
+  const allCarrers = useSelector((state:any) => state.carrers);
+  const selectedCareer = useSelector((state:any) => state.selectedCareer);
+  const dispatch:any = useDispatch();
+  useEffect(() => {
+      dispatch(getAllCareers());
+      dispatch(selectCareer(0));
+  }, [dispatch]);
 
-  const handleCareer = (id: any) => {
-    console.log(`Carrera seleccionada: ${id}`);
-    setSelectedCareer(id);
+  const handleCareer = (id: number) => {
+    dispatch(selectCareer(id));
+    dispatch(searchChallenges(''));
+    dispatch(searchChallengesCareer(id));
+    dispatch(searchWords(''));
   };
 
-  const handleSlide = (direction: any) => {
+  const handleSlide = useCallback((direction: number) => {
     let newIndex = currentIndex + direction;
     if (newIndex < 0) {
       newIndex = 0;
-    } else if (newIndex > careersData.data.careers.length - visibleNames) {
-      newIndex = careersData.data.careers.length - visibleNames;
+    } else if (newIndex > allCarrers.length - visibleNames) {
+      newIndex = allCarrers.length - visibleNames;
     }
     setCurrentIndex(newIndex);
-  };
+  }, [currentIndex, visibleNames, allCarrers]);
 
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth < 600) {
+      if (screenWidth <= 600) {
         setVisibleNames(2);
-      } else if (screenWidth < 950) {
+      } else if (screenWidth <= 950) {
         setVisibleNames(3);
-      } else if (screenWidth < 1050) {
+      } else if (screenWidth <= 1050) {
         setVisibleNames(4);
       } else {
         setVisibleNames(5);
@@ -49,15 +60,22 @@ const MenuSlider = () => {
         <ArrowLeft/>
       </button>
       <div className={styles.slider_careers}>
-        {careersData.data.careers.slice(currentIndex, currentIndex + visibleNames).map((career) => (
-          <div
-            key={career.id}
-            className={`${styles.career} ${selectedCareer === career.id ? styles.selected_career : ''}`}
-            onClick={() => handleCareer(career.id)}
-          >
-            {career.name}
-          </div>
-        ))}
+
+        {
+          allCarrers && allCarrers.length !== 0 ? (
+            allCarrers.slice(currentIndex, currentIndex + visibleNames).map((career: CareersProps) => (
+              <div
+                key={career.idCareer}
+                className={`${styles.career} ${selectedCareer === career.idCareer ? styles.selected_career : ''}`}
+                onClick={() => handleCareer(career.idCareer)}
+              >
+                {career.name}
+              </div>
+            ))
+          ): (
+            <div>Cargando carreras...</div>
+          )
+        }
       </div>
       <button className={styles.slider_button} onClick={() => handleSlide(1)}>
         <ArrowRight />
@@ -67,55 +85,3 @@ const MenuSlider = () => {
 }
 
 export default MenuSlider
-
-const careersData = {
-  data: {
-    careers: [
-      {
-        id: 0,
-        name: "Mostrar todos",
-        active: true
-      },
-      {
-          id: 1,
-          name: "Psicología",
-          active: true
-      },
-      {
-          id: 2,
-          name: "Arquitectura",
-          active: true
-      },
-      {
-          id: 3,
-          "name": "Derecho",
-          "active": true
-      },
-      {
-          id: 4,
-          name: "Ing. Industrial",
-          active: true
-      },
-      {
-          id: 5,
-          name: "Ing. Sistemas",
-          active: false
-      },
-      {
-          id: 6,
-          name: "Marketing",
-          active: false
-      },
-      {
-          id: 7,
-          name: "Administración",
-          active: false
-      },
-      {
-          id: 8,
-          name: "Economía",
-          active: false
-      }
-    ],
-  },
-};

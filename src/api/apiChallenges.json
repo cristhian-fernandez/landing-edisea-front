@@ -3,14 +3,13 @@
         "challenges": [
             {
                 "idChallenge": 1,
-                "name": "Crea una campaña publicitaria para bembos",
+                "name": "Crea una campaña ",
                 "description": "Aprenderas a vivir la experiencia de un marketero",
-                "urlImagen": "xxxx",
+                "urlImagen": "https://d31npzejelj8v1.cloudfront.net/media/catalog/product/4/-/4-clasicas-papa-familiar-600x600.jpg",
                 "challengeDate": "12-12-2023 04:00:00",
                 "startDate": "10-12-2023 00:00:00",
                 "finishDate": "12-12-2023 12:59:59",
                 "idCareer": 6,
-                "career": "Marketing",
                 "idLeadInstructor": 1,
                 "idSupportInstructors": [
                     2,
@@ -22,12 +21,11 @@
                 "idChallenge": 2,
                 "name": "Crea una campaña sistemas para bembos",
                 "description": "Aprenderas a vivir la experiencia de un marketero",
-                "urlImagen": "xxxx",
+                "urlImagen": "https://i.ytimg.com/vi/knVwokXITGI/maxresdefault.jpg",
                 "challengeDate": "12-12-2023 04:00:00",
                 "startDate": "10-12-2023 00:00:00",
                 "finishDate": "12-12-2023 12:59:59",
-                "idCareer": 5,
-                "career": "Ing. Sistemas",
+                "idCareer": 3,
                 "idLeadInstructor": 1,
                 "idSupportInstructors": [
                     2,
@@ -37,15 +35,62 @@
             },
             {
                 "idChallenge": 3,
-                "name": "Crea una campaña arquitectura para bembos",
+                "name": "Crea una campaña de arquitectura completa para bembos",
                 "description": "Aprenderas a vivir la experiencia de un marketero",
-                "urlImagen": "xxxx",
+                "urlImagen": "https://zebra.mx/cdn/shop/articles/prueba8_1200x.jpg",
                 "challengeDate": "12-12-2023 04:00:00",
                 "startDate": "10-12-2023 00:00:00",
                 "finishDate": "12-12-2023 12:59:59",
                 "idCareer": 2,
-                "career": "Arquitectura",
-                "idLeadInstructor": 1,
+                "idLeadInstructor": 2,
+                "idSupportInstructors": [
+                    2,
+                    3
+                ],
+                "active": true
+            },
+            {
+                "idChallenge": 4,
+                "name": "Crea una campaña arquitectura para bembos",
+                "description": "Aprenderas a vivir la experiencia de un marketero",
+                "urlImagen": "https://zebra.mx/cdn/shop/articles/prueba8_1200x.jpg",
+                "challengeDate": "12-12-2023 04:00:00",
+                "startDate": "10-12-2023 00:00:00",
+                "finishDate": "12-12-2023 12:59:59",
+                "idCareer": 5,
+                "idLeadInstructor": 3,
+                "idSupportInstructors": [
+                    2,
+                    3
+                ],
+                "active": true
+            },
+            {
+                "idChallenge": 5,
+                "name": "Crea una campaña arquitectura para bembos",
+                "description": "Aprenderas a vivir la experiencia de un marketero",
+                "urlImagen": "https://zebra.mx/cdn/shop/articles/prueba8_1200x.jpg",
+                "challengeDate": "12-12-2023 04:00:00",
+                "startDate": "10-12-2023 00:00:00",
+                "finishDate": "12-12-2023 12:59:59",
+                "idCareer": 2,
+                "idLeadInstructor": 3,
+                "idSupportInstructors": [
+                    2,
+                    3
+                ],
+                "active": true
+            },
+            {
+                "idChallenge": 6,
+                "name": "Crea una campaña de derecho para tribunales en Perú",
+                "description": "Aprenderas a vivir la experiencia de un marketero",
+                "urlImagen": "https://zebra.mx/cdn/shop/articles/prueba8_1200x.jpg",
+                "challengeDate": "12-12-2023 04:00:00",
+                "startDate": "10-12-2023 00:00:00",
+                "finishDate": "12-12-2023 12:59:59",
+                "idCareer": 2,
+                "idLeadInstructor": 2,
                 "idSupportInstructors": [
                     2,
                     3

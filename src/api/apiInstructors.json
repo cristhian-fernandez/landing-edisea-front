@@ -4,6 +4,7 @@
             {
                 "idInstructor": 1,
                 "name": "Anthony de la Cruz",
+                "urlImagen": "https://scontent.flim37-1.fna.fbcdn.net/v/t1.6435-9/179284632_2012615868881091_8569792203745836137_n.jpg?_nc_cat=101&cb=99be929b-3346023f&ccb=1-7&_nc_sid=be3454&_nc_eui2=AeGOMRvU6iOvTkDZ2av3n6kNDkuxtWh9zL4OS7G1aH3MvkNZXld48sNnAqBQIQoiiHzgrMRvww6eyPwG8hn1vZpF&_nc_ohc=O0vJ7mNYO8UAX-0qFP3&_nc_ht=scontent.flim37-1.fna&oh=00_AfCeaDSXpZCxoQv8LIh1jeW0AZPgiSskfjnTBvugJT1z2Q&oe=65010004",
                 "description": "Profesor creativo",
                 "active": true
             },
@@ -11,12 +12,14 @@
                 "idInstructor": 2,
                 "name": "Luis Suarez",
                 "description": "Profesor creativo",
+                "urlImagen": "https://scontent.flim37-1.fna.fbcdn.net/v/t1.6435-9/179284632_2012615868881091_8569792203745836137_n.jpg?_nc_cat=101&cb=99be929b-3346023f&ccb=1-7&_nc_sid=be3454&_nc_eui2=AeGOMRvU6iOvTkDZ2av3n6kNDkuxtWh9zL4OS7G1aH3MvkNZXld48sNnAqBQIQoiiHzgrMRvww6eyPwG8hn1vZpF&_nc_ohc=O0vJ7mNYO8UAX-0qFP3&_nc_ht=scontent.flim37-1.fna&oh=00_AfCeaDSXpZCxoQv8LIh1jeW0AZPgiSskfjnTBvugJT1z2Q&oe=65010004",
                 "active": true
             },
             {
                 "idInstructor": 3,
                 "name": "Luz Morales",
                 "description": "Profesora creativa",
+                "urlImagen": "https://scontent.flim37-1.fna.fbcdn.net/v/t1.6435-9/179284632_2012615868881091_8569792203745836137_n.jpg?_nc_cat=101&cb=99be929b-3346023f&ccb=1-7&_nc_sid=be3454&_nc_eui2=AeGOMRvU6iOvTkDZ2av3n6kNDkuxtWh9zL4OS7G1aH3MvkNZXld48sNnAqBQIQoiiHzgrMRvww6eyPwG8hn1vZpF&_nc_ohc=O0vJ7mNYO8UAX-0qFP3&_nc_ht=scontent.flim37-1.fna&oh=00_AfCeaDSXpZCxoQv8LIh1jeW0AZPgiSskfjnTBvugJT1z2Q&oe=65010004",
                 "active": true
             }
         ]
