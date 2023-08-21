@@ -41,3 +41,6 @@ export interface InstructorsProps {
     description: string
     active: Boolean
 }
+export interface ChallengeCardsProps {
+    tabsChallenge : number
+}

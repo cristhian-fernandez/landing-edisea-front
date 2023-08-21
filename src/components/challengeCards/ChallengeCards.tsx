@@ -1,15 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCareers, getAllChallenges, getAllInstructors } from "./../../redux/actions";
-import { CareersProps, ChallengesProps, InstructorsProps } from '../../types/index';
+import { CareersProps, ChallengeCardsProps, ChallengesProps, InstructorsProps } from '../../types/index';
 import ChallengeCard from "../challengeCard/ChallengeCard";
 import styles from './../../styles/ChallengeCards.module.css'
 
-const ChallengeCards = () => {
+
+const ChallengeCards = ({tabsChallenge}: ChallengeCardsProps) => {
   const challenges = useSelector((state:any) => state.challenges);
   const search = useSelector((state:any) => state.search);
   const allCarrers = useSelector((state:any) => state.carrers);
   const allInstructors = useSelector((state:any) => state.instructors);
+  const currentMonth = new Date().getMonth();
 
   const dispatch:any = useDispatch();
   useEffect(() => {
@@ -18,11 +20,19 @@ const ChallengeCards = () => {
       dispatch(getAllInstructors());
   }, [dispatch]);
 
-  if ( challenges && challenges.length !== 0) {
+  const filteredChallenges = challenges.filter(
+    (challenge: ChallengesProps) =>{
+      if(tabsChallenge === 0) return challenge.startDate && new Date(challenge.startDate).getMonth() === currentMonth && challenge.active
+      if(tabsChallenge === 1) return challenge.startDate && new Date(challenge.startDate).getMonth() > currentMonth && challenge.active
+      return null
+    }
+  );
+
+  if ( filteredChallenges && filteredChallenges.length !== 0) {
     return (
       <div className={styles.cards_challenge}>
         {
-          challenges && challenges.map((challenge: ChallengesProps) => {
+          filteredChallenges && filteredChallenges.map((challenge: ChallengesProps) => {
             const career = allCarrers.find((career: CareersProps) => career.idCareer === challenge.idCareer)
             const instructor = allInstructors.find((instructor: InstructorsProps) => instructor.idInstructor === challenge.idLeadInstructor)
             return (

@@ -75,7 +75,6 @@ const rootReducer = (state = initialState, action:actionProps) => {
                 search : search
             } 
         case GET_CAREER_BY_ID:
-            console.log('GET_CAREER_BY_ID::', action.payload[0])
             return{
                 ...state,
                 carrerDetail: action.payload[0]

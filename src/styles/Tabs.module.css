@@ -1,0 +1,28 @@
+.tabs_container {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+.tab_titles {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    
+}
+
+.tab_title {
+    padding: 0 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.tab_title.active {
+    color: var(--first-color);
+    border-bottom: 4px solid var(--first-color);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.tab_content {
+    padding-top: 25px;
+}
