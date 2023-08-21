@@ -1,3 +1,8 @@
 export { default as SearchIcon } from './SearchIcon'
 export { default as ArrowRight } from './ArrowRight'
 export { default as ArrowLeft } from './ArrowLeft'
+export { default as FacebookIcon } from './FacebookIcon'
+export { default as InstagramIcon } from './InstagramIcon'
+export { default as TiktokIcon } from './TiktokIcon'
+export { default as WhatsappIcon } from './WhatsappIcon'
+export { default as YoutubeIcon } from './YoutubeIcon'

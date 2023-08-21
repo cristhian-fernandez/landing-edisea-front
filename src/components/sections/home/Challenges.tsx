@@ -4,6 +4,7 @@ import MenuSlider from './../../../components/menu/menuSlider/MenuSlider'
 import SearchBar from './../../../components/searchBar/SearchBar'
 import styles from './../../../styles/Sections.module.css'
 import Benefits from './Benefits'
+import Plans from './Plans'
 
 const Challenges = () => {
   return (
@@ -13,6 +14,7 @@ const Challenges = () => {
       <MenuSlider />
       <TabsChallenges />
       <Benefits />
+      <Plans />
     </div>
   )
 }
