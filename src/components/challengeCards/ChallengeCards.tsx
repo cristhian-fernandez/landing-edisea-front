@@ -9,7 +9,7 @@ import styles from './../../styles/ChallengeCards.module.css'
 const ChallengeCards = ({tabsChallenge}: ChallengeCardsProps) => {
   const challenges = useSelector((state:any) => state.challenges);
   const search = useSelector((state:any) => state.search);
-  const allCarrers = useSelector((state:any) => state.carrers);
+  const allCareers = useSelector((state:any) => state.carrers);
   const allInstructors = useSelector((state:any) => state.instructors);
   const currentMonth = new Date().getMonth();
 
@@ -33,7 +33,7 @@ const ChallengeCards = ({tabsChallenge}: ChallengeCardsProps) => {
       <div className={styles.cards_challenge}>
         {
           filteredChallenges && filteredChallenges.map((challenge: ChallengesProps) => {
-            const career = allCarrers.find((career: CareersProps) => career.idCareer === challenge.idCareer)
+            const career = allCareers.find((career: CareersProps) => career.idCareer === challenge.idCareer)
             const instructor = allInstructors.find((instructor: InstructorsProps) => instructor.idInstructor === challenge.idLeadInstructor)
             return (
               <ChallengeCard 

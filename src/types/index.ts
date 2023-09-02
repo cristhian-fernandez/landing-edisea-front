@@ -3,7 +3,7 @@ export interface IconProps {
 }
 
 export interface actionProps {
-    type: 'GET_DATA_CARROUSEL' | 'GET_ALL_CAREERS' | 'GET_ALL_CHALLENGES' | 'SEARCH_CHALLENGES' | 'SEARCH_CHALLENGES_CAREER' | 'GET_CAREER_BY_ID' | 'GET_INSTRUCTOR_BY_ID' | 'GET_ALL_INSTRUCTORS' | 'SELECT_CAREER' | 'SEARCH_WORDS'
+    type: 'GET_DATA_CARROUSEL' | 'GET_ALL_CAREERS' | 'GET_ALL_CHALLENGES' | 'SEARCH_CHALLENGES' | 'SEARCH_CHALLENGES_CAREER' | 'GET_CAREER_BY_ID' | 'GET_INSTRUCTOR_BY_ID' | 'GET_ALL_INSTRUCTORS' | 'SELECT_CAREER' | 'SEARCH_WORDS' | 'ADD_TO_CART'
     payload: any
 }
 
@@ -28,7 +28,7 @@ export interface ChallengesProps {
     finishDate?: Date
     idCareer: number
     nameCareer?: string
-    instructor: InstructorsProps
+    instructor?: InstructorsProps
     idLeadInstructor: number
     idSupportInstructors?: number[]
     active?: Boolean
@@ -44,3 +44,8 @@ export interface InstructorsProps {
 export interface ChallengeCardsProps {
     tabsChallenge : number
 }
+export interface PayChallengeCardsProps {
+    careers : CareersProps[]
+    selectCareer : number
+}
+

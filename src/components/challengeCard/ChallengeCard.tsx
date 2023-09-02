@@ -25,12 +25,16 @@ const ChallengeCard = (props: ChallengesProps) => {
               </div>
             </div>
             <div className={styles.card_footer}>
-              <picture className={styles.card_instructor_img}>
-                <img src={props.instructor.urlImagen} alt={props.instructor.name} />
-              </picture>
-              <div className={styles.card_instructor_name}>
-                {props.instructor.name}
-              </div>
+              {props.instructor ? 
+              <>
+                <picture className={styles.card_instructor_img}>
+                  <img src={props.instructor.urlImagen} alt={props.instructor.name} />
+                </picture>
+                <div className={styles.card_instructor_name}>
+                  {props.instructor.name}
+                </div>
+              </>: ''}
+              
             </div>
           </div>
         ) : ''

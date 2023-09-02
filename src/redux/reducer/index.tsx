@@ -9,6 +9,12 @@ import {
     GET_INSTRUCTOR_BY_ID,
     SELECT_CAREER,
     SEARCH_WORDS,
+
+    ADD_TO_CART,
+    REMOVE_TO_CART,
+    ADD_ONE_FROM_CART,
+    REMOVE_ONE_FROM_CART,
+    CLEAR_CART
 } from "../constants";
 import {CareersProps, ChallengesProps, actionProps} from "./../../types"
 
@@ -24,6 +30,7 @@ const initialState = {
     search: false,
     selectedCareer: -1,
     searchWords: '',
+    cart : JSON.parse(window.localStorage.getItem('cart') || '[]'),
 };
 
 const rootReducer = (state = initialState, action:actionProps) => {
@@ -94,6 +101,13 @@ const rootReducer = (state = initialState, action:actionProps) => {
                 ...state,
                 searchWords : action.payload
             }
+        case ADD_TO_CART:
+            const addValue = [...state.cart, action.payload];
+            window.localStorage.setItem('cart', JSON.stringify(addValue));
+            return {
+                ...state,
+                cart : JSON.parse(window.localStorage.getItem('cart') || '')
+            } 
         default: return state;
     };
 

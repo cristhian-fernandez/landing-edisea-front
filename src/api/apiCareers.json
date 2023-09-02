@@ -13,28 +13,28 @@
             },
             {
                 "idCareer": 2,
-                "name": "Arquitectura",
+                "name": "Derecho",
                 "active": true
             },
             {
                 "idCareer": 3,
-                "name": "Derecho",
+                "name": "Arquitectura",
                 "active": true
             },
             {
                 "idCareer": 4,
                 "name": "Ing. Industrial",
-                "active": true
+                "active": false
             },
             {
                 "idCareer": 5,
                 "name": "Ing. Sistemas",
-                "active": true
+                "active": false
             },
             {
                 "idCareer": 6,
                 "name": "Marketing",
-                "active": true
+                "active": false
             },
             {
                 "idCareer": 7,

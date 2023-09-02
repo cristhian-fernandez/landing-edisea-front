@@ -9,6 +9,13 @@ import {
   GET_INSTRUCTOR_BY_ID,
   SELECT_CAREER,
   SEARCH_WORDS,
+
+  ADD_TO_CART,
+  REMOVE_TO_CART,
+  ADD_ONE_FROM_CART,
+  REMOVE_ONE_FROM_CART,
+  // CREATE_CART,
+  CLEAR_CART,
 } from "../constants/";
 import { Dispatch } from 'redux';
 import {GetDispatchAction} from "./../../types"
@@ -126,5 +133,51 @@ export const selectCareer = (id: number) => {
   return {
       type : SELECT_CAREER,
       payload : id
+  }
+}
+
+export const addToCart = (cart: any) => {
+  return {
+      type: ADD_TO_CART,
+      payload : cart
+  }
+}
+
+export const removeToCart = (id: number) => {
+  return {
+      type: REMOVE_TO_CART,
+      payload : id
+  }
+}
+
+export const addOneFromCart = (id: number) => {
+  return {
+      type: ADD_ONE_FROM_CART,
+      payload : id
+  }
+}
+export const removeOneFromCart = (id: number) => {
+  return {
+      type: REMOVE_ONE_FROM_CART,
+      payload : id
+  }
+}
+
+// export const createCart = (values) => {
+//   return async (dispatch) => {
+//       axios.post(urlTest, values)
+//       .then(responde => {
+//           dispatch({
+//               type : CREATE_CART,
+//               payload : responde.data
+//           })
+//       })
+//       .catch( e => console.log(e));
+//   }
+// }
+
+export const clearCart = () => {
+  return {
+      type: CLEAR_CART
   }
 }

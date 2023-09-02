@@ -1,6 +1,19 @@
+import { useState } from 'react';
 import styles from './../../../styles/Sections.module.css'
+import ModalPayment from '../../modal/modalPay/ModalPayment';
 
 const Plans = () => {
+
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
   const onSelected = () => {
     console.log('Seleccionar Pago')
   }
@@ -21,7 +34,8 @@ const Plans = () => {
             <span>Retos en vivo por zoom</span>
             <span>Pagas por el reto escogido</span>
           </div>
-          <button onClick={onSelected} className={styles.plans_card__button}>Seleccionar pago</button>
+          <button onClick={openModal} className={styles.plans_card__button}>Seleccionar pago</button>
+          {modalVisible && <ModalPayment onClose={closeModal} />}
         </div>
         <div className={styles.plans_card}>
           <h4 className={styles.plans_card__subtitle}>Recomendado</h4>
