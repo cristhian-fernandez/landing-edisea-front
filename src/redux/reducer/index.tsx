@@ -12,8 +12,6 @@ import {
 
     ADD_TO_CART,
     REMOVE_TO_CART,
-    ADD_ONE_FROM_CART,
-    REMOVE_ONE_FROM_CART,
     CLEAR_CART
 } from "../constants";
 import {CareersProps, ChallengesProps, actionProps} from "./../../types"
@@ -108,6 +106,19 @@ const rootReducer = (state = initialState, action:actionProps) => {
                 ...state,
                 cart : JSON.parse(window.localStorage.getItem('cart') || '')
             } 
+        case REMOVE_TO_CART:
+            const removeValue = state.cart.filter((challenge:ChallengesProps)  => challenge.idChallenge !== action.payload);
+            window.localStorage.setItem('cart', JSON.stringify(removeValue));
+            return {
+                ...state,
+                cart : JSON.parse(window.localStorage.getItem('cart') || '')
+            } 
+        case CLEAR_CART:
+            window.localStorage.setItem('cart', JSON.stringify([]));
+            return {
+                ...state,
+                cart : []
+            }
         default: return state;
     };
 

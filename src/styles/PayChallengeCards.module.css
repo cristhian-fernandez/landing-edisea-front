@@ -101,11 +101,20 @@
     background-color: transparent;
     border: 1px solid var(--grey-500);
     color: var(--grey-500);
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .challenge_add_button:hover{
     background-color: var(--fourth-color-hover);
     border: 1px solid var(--fourth-color-hover);
+    cursor: pointer;
+}
+
+.challenge_added_button:hover{
+    border: 1px solid var(--grey-600);
+    color: var(--grey-600);
+    font-weight: 700;
     cursor: pointer;
 }
 

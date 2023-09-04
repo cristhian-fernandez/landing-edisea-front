@@ -1,8 +1,8 @@
-import AccordionPay from '../../accordion/accordionPay/AccordionPay';
+import AccordionSelectChallenge from '../../accordion/accordionPay/AccordionSelectChallenge';
 
 const TabSelectChallenge = () => {
   return (
-    <AccordionPay />
+    <AccordionSelectChallenge />
   )
 }
 
