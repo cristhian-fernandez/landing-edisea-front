@@ -20,13 +20,13 @@ import {
 import {CareersProps, ChallengesProps, actionProps} from "./../../types"
 
 const initialState = {
-    carrers : [],
-    instructors : [],
-    countries : [],
+    carrers : [] as any[],
+    instructors : [] as any[],
+    countries : [] as any[],
     dataCarrousel : {},
-    challenges : [],
-    allChallenges : [],
-    messagesModal: [],
+    challenges : [] as any[],
+    allChallenges : [] as any[],
+    messagesModal: [] as any[],
     payments: {},
     paymentmake: 0,
     carrerDetail: {},
@@ -34,7 +34,7 @@ const initialState = {
     search: false,
     selectedCareer: -1,
     searchWords: '',
-    cart : JSON.parse(window.localStorage.getItem('cart') || '[]'),
+    cart : JSON.parse(window.localStorage.getItem('cart') || '[]') as any[],
 };
 
 const rootReducer = (state = initialState, action:actionProps) => {

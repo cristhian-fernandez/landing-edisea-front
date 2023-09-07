@@ -7,7 +7,6 @@ const Footer = () => {
     let urlFacebook = 'https://www.facebook.com/edisea.profesional';
     let urlInstagram = 'https://www.instagram.com/edisea_profesional/';
     let urlTiktok = 'https://www.tiktok.com/@clubedisea';
-    let urlLinkedin = 'https://www.linkedin.com/company/ediseaperu';
     let urlWhatsapp = `https://api.whatsapp.com/send?phone=+51951420376&text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20las%20Clases%20de%20programaci%C3%B3n%20en%20Edisea%20%F0%9F%98%81`;
 
     return (
