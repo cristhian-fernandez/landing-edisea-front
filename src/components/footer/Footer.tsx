@@ -24,7 +24,7 @@ const Footer = () => {
                     <span onClick={() => window.open(urlFacebook)}><FacebookIcon /></span>
                     <span onClick={() => window.open(urlInstagram)}><InstagramIcon /></span>
                     <span onClick={() => window.open(urlTiktok)}><TiktokIcon /></span>
-                    <span onClick={() => window.open(urlLinkedin)}><YoutubeIcon /></span>
+                    <span><YoutubeIcon /></span>
                 </div>
                 <div className={styles.copy} >
                     <span>Copyright © 2022 | Desarrollado por Edisea</span>

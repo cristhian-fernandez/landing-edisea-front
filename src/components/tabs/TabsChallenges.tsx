@@ -22,7 +22,8 @@ const TabsChallenges = () => {
           className={`${styles.tab_title} ${selectedTab === 0 ? styles.active : ''}`}
           onClick={() => handleTabClick(0)}
         >
-          Lo nuevo en Edisea
+          {/* Lo nuevo en Edisea */}
+          Retos en Setiembre
         </div>
         <div
           className={`${styles.tab_title} ${selectedTab === 1 ? styles.active : ''}`}

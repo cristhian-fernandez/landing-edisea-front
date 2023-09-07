@@ -3,10 +3,13 @@ import AccordionSummary from "./AccordionSummary"
 import styles from './../../../styles/Accordion.module.css';
 import {BcpIcon, InterbankIcon, WhatsappIcon} from './../../icons'
 import yapePath from './../../../assets/yape_plin_icon.png'
+import { useSelector } from "react-redux";
+import { formatPayment } from "../../../utils/formatData";
 
 const AccordionSelectPayment = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(2);
   const [selectedOption, setSelectedOption] = useState<number | null>(2);
+  const paymentMake = useSelector((state:any) => state.paymentMake);
 
   const toggleAccordion = (index: number) => {
     if (activeIndex === index) {
@@ -29,7 +32,7 @@ const AccordionSelectPayment = () => {
     
     <div className={styles.accordion}>
       <AccordionSummary />
-      <p className={styles.select_pay_title}>Selecciona una opción para realizar el pago</p>
+      <p className={styles.select_pay_title}>Selecciona una opción para realizar el pago <span>(Recuerda tomar foto a tu transferencia)</span></p>
 
       <div className={`${styles.accordion_item_pay} ${activeIndex === 2 ? styles.active : ''}`}>
         <div className={`${styles.accordion_title} ${selectedOption === 2 ? styles.active : ''}`}
@@ -55,7 +58,7 @@ const AccordionSelectPayment = () => {
           <div className={`${styles.tab_content} ${styles.tab_content_pay}`}>
             <div className={styles.content_transfer}>
               <p>Ahora debes transferir</p>
-              <span>S/ 29.00 Soles</span>
+              <span className={styles.content_transfer_price}>S/ {formatPayment(paymentMake)} Soles</span>
             </div>
             <div className={styles.content_account}>
               <p>Propietario</p>
@@ -63,11 +66,11 @@ const AccordionSelectPayment = () => {
             </div>
             <div className={styles.content_account}>
               <p>Número Celular Yape</p>
-              <span>999 999 999</span>
+              <span>942 753 436</span>
             </div>
             <div className={styles.content_account}>
               <p>Número Celular Plin</p>
-              <span>999 999 999</span>
+              <span>942 753 436</span>
             </div>
           </div>
         </div>
@@ -96,7 +99,7 @@ const AccordionSelectPayment = () => {
           <div className={`${styles.tab_content} ${styles.tab_content_pay}`}>
             <div className={styles.content_transfer}>
               <p>Ahora debes transferir</p>
-              <span>S/ 29.00 Soles</span>
+              <span className={styles.content_transfer_price}>S/ {formatPayment(paymentMake)} Soles</span>
             </div>
             {/* <h4>BANCO CREDITO DEL PERÚ</h4> */}
             <div className={styles.content_account}>
@@ -105,11 +108,11 @@ const AccordionSelectPayment = () => {
             </div>
             <div className={styles.content_account}>
               <p>Cuenta Bancaria BCP Soles</p>
-              <span>xxxx-xxxx-xxxx-xxx</span>
+              <span>2550 4288 213064</span>
             </div>
             <div className={styles.content_account}>
               <p>Cuenta Interbancaria BCP Soles</p>
-              <span>xxxx-xxxx-xxxx-xxx</span>
+              <span>002255 1042 8821 306485</span>
             </div>
           </div>
         </div>
@@ -128,9 +131,9 @@ const AccordionSelectPayment = () => {
               onChange={() => handleOptionChange(1)}
               className={styles.checkbox}
             />
-            <p>Vía transferencia</p>
-            <p className={styles.content_bank_abrev}>INTERBANK</p>
-            <p className={styles.content_bank}>bancaria INTERBANK</p>
+            <p>Vía</p>
+            <p className={styles.content_bank_abrev}>transfer INTERBANK</p>
+            <p className={styles.content_bank}>transferencia bancaria INTERBANK</p>
           </div>
           <div className={styles.content_bank_icon}><InterbankIcon/></div>
         </div>
@@ -139,18 +142,18 @@ const AccordionSelectPayment = () => {
           <div className={`${styles.tab_content} ${styles.tab_content_pay}`}>
             <div className={styles.content_transfer}>
               <p>Ahora debes transferir</p>
-              <span>S/ 29.00 Soles</span>
+              <span className={styles.content_transfer_price}>S/ {formatPayment(paymentMake)} Soles</span>
             </div>
             <div className={styles.content_account}>
               <p>Propietario</p>
-              <span>Anthony de la Cruz<span className={styles.content_position}>(Cofundador Edisea)</span></span>
+              <span>Edisea Sac<span className={styles.content_position}></span></span>
             </div>
             <div className={styles.content_account}>
-              <p>Cuenta Bancaria BCP Soles</p>
+              <p>Cuenta Bancaria INTERBANK Soles</p>
               <span>xxxx-xxxx-xxxx-xxx</span>
             </div>
             <div className={styles.content_account}>
-              <p>Cuenta Interbancaria BCP Soles</p>
+              <p>Cuenta Interbancaria INTERBANK Soles</p>
               <span>xxxx-xxxx-xxxx-xxx</span>
             </div>
           </div>

@@ -69,7 +69,7 @@ const ModalPayment: React.FC<ModalProps> = ({ onClose }) => {
               <p className={styles.confirm_title}>Registro completo</p>
               <p>¡Gracias por confirmar tu registro para Reto de Profesionales! Estamos emocionados de tenerte con nosotros.</p>
               <p>Esperamos que esta experiencia sea enriquecedora y te ayude a avanzar en tu camino hacia tu éxito profesional.</p>
-              <p className={styles.confirm_footer}>¡Nos vemos pronto en el Reto!</p>
+              <p className={styles.confirm_footer}>En breve nos comunicaremos contigo ¡Nos vemos pronto en el Reto!</p>
             </div>
           }
         </div>

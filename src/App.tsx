@@ -2,6 +2,7 @@ import { Route, Routes} from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Home from './views/home/Home';
 import Footer from './components/footer/Footer';
+import './dataBase/firebase'
 const App = (): JSX.Element => {
   return (
     <div>

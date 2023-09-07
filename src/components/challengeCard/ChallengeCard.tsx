@@ -10,7 +10,7 @@ const ChallengeCard = (props: ChallengesProps) => {
           <div className={`${styles.card_challenge} ${styles.card_center}`}>
             <div className={styles.card_header}>
               <div className={styles.card_challenge_img}>
-                <img src={props.urlImagen} alt={props.name}/>
+                <img src={props.urlImagen} alt={props.name} loading="lazy"/>
               </div>
             </div>
             <div className={styles.card_body}>
@@ -28,7 +28,7 @@ const ChallengeCard = (props: ChallengesProps) => {
               {props.instructor ? 
               <>
                 <picture className={styles.card_instructor_img}>
-                  <img src={props.instructor.urlImagen} alt={props.instructor.name} />
+                  <img src={props.instructor.urlImagen} alt={props.instructor.name} loading="lazy"/>
                 </picture>
                 <div className={styles.card_instructor_name}>
                   {props.instructor.name}

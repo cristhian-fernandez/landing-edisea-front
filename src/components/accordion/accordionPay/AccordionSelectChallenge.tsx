@@ -73,7 +73,7 @@ const AccordionSelectChallenge: React.FC = () => {
         <div className={styles.accordion_content}>
           <div className={styles.content_challenge_selected}>
             {
-              cart.map((challenge:ChallengesProps) => {
+              cart && cart.length !== 0 ? cart.map((challenge:ChallengesProps) => {
                 return(
                   <div className={styles.item_challenge_selected} key={challenge.idChallenge}>
                     <div className={styles.challenge_selected_add}>
@@ -86,8 +86,9 @@ const AccordionSelectChallenge: React.FC = () => {
                     <div className={styles.challenge_selected_remove} onClick={()=> {onClickDelete(challenge.idChallenge)}}><span >x</span></div>
                   </div>
                 )
-              })
+              }) : <p>No ha seleccionado ningún reto</p>
             }
+
           </div>
         </div>
       </div>

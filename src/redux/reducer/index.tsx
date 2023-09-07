@@ -3,12 +3,15 @@ import {
     GET_ALL_CAREERS,
     GET_ALL_INSTRUCTORS,
     GET_ALL_CHALLENGES,
+    GET_MESSAGES_MODAL,
     SEARCH_CHALLENGES,
     SEARCH_CHALLENGES_CAREER,
     GET_CAREER_BY_ID,
     GET_INSTRUCTOR_BY_ID,
     SELECT_CAREER,
     SEARCH_WORDS,
+    GET_ALL_PAYMENT,
+    GET_PAYMENT_MAKE,
 
     ADD_TO_CART,
     REMOVE_TO_CART,
@@ -23,6 +26,9 @@ const initialState = {
     dataCarrousel : {},
     challenges : [],
     allChallenges : [],
+    messagesModal: [],
+    payments: {},
+    paymentmake: 0,
     carrerDetail: {},
     instructorDetail: {},
     search: false,
@@ -57,6 +63,16 @@ const rootReducer = (state = initialState, action:actionProps) => {
                 challenges : [...action.payload],
                 allChallenges : [...action.payload],
             } 
+        case GET_MESSAGES_MODAL:
+            return {
+                ...state,
+                messagesModal : action.payload
+            }
+        case GET_ALL_PAYMENT:
+            return {
+                ...state,
+                payments : action.payload
+            }
         case SEARCH_CHALLENGES:
             const filteredChallenges = challenges.filter((challenge: ChallengesProps) => {
                 const foundCareer: any = careers.find((career:CareersProps) => career.idCareer === challenge.idCareer)
@@ -98,6 +114,11 @@ const rootReducer = (state = initialState, action:actionProps) => {
             return {
                 ...state,
                 searchWords : action.payload
+            }
+        case GET_PAYMENT_MAKE:
+            return {
+                ...state,
+                paymentMake : action.payload
             }
         case ADD_TO_CART:
             const addValue = [...state.cart, action.payload];

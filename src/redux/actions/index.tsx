@@ -3,12 +3,15 @@ import {
   GET_ALL_CAREERS,
   GET_ALL_CHALLENGES,
   GET_ALL_INSTRUCTORS,
+  GET_MESSAGES_MODAL,
   SEARCH_CHALLENGES,
   SEARCH_CHALLENGES_CAREER,
   GET_CAREER_BY_ID,
   GET_INSTRUCTOR_BY_ID,
   SELECT_CAREER,
   SEARCH_WORDS,
+  GET_ALL_PAYMENT,
+  GET_PAYMENT_MAKE,
 
   ADD_TO_CART,
   REMOVE_TO_CART,
@@ -23,6 +26,8 @@ import apiCarrousel from './../../api/apiCarrousel.json'
 import apiCareers from './../../api/apiCareers.json'
 import apiChallenges from './../../api/apiChallenges.json'
 import apiInstructors from './../../api/apiInstructors.json'
+import apiMessagesModal from './../../api/apiMessagesModal.json'
+import apiPayment from './../../api/apiPayment.json'
 
 export const getDataCarrousel = () => {
   return async (dispatch: Dispatch<GetDispatchAction>) => {
@@ -30,6 +35,34 @@ export const getDataCarrousel = () => {
       const response = apiCarrousel;
       dispatch({
         type: GET_DATA_CARROUSEL,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getMessagesModal = () => {
+  return async (dispatch: Dispatch<GetDispatchAction>) => {
+    try {
+      const response = apiMessagesModal;
+      dispatch({
+        type: GET_MESSAGES_MODAL,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getAllPayment = () => {
+  return async (dispatch: Dispatch<GetDispatchAction>) => {
+    try {
+      const response = apiPayment;
+      dispatch({
+        type: GET_ALL_PAYMENT,
         payload: response.data,
       });
     } catch (error) {
@@ -112,6 +145,13 @@ export const searchWords = (search: string) => {
   return {
       type : SEARCH_WORDS,
       payload : search
+  }
+}
+
+export const getPaymentMake = (payment: number) => {
+  return {
+      type : GET_PAYMENT_MAKE,
+      payload : payment
   }
 }
 

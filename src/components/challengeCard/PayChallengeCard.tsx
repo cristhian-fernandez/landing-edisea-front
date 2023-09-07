@@ -29,7 +29,7 @@ const PayChallengeCard = ({idChallenge, name, urlImagen, nameCareer, challengeDa
         idChallenge ? (
           <div className={styles.challenge_card}>
             <div className={styles.challenge_image}>
-              <img src={urlImagen} alt={name}  />
+              <img src={urlImagen} alt={name}  loading="lazy"/>
               <span className={styles.challenge_name_career}>{nameCareer}</span>
               <span className={styles.challenge_date}>{String(challengeDate)}</span>
             </div>

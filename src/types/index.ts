@@ -3,7 +3,7 @@ export interface IconProps {
 }
 
 export interface actionProps {
-    type: 'GET_DATA_CARROUSEL' | 'GET_ALL_CAREERS' | 'GET_ALL_CHALLENGES' | 'SEARCH_CHALLENGES' | 'SEARCH_CHALLENGES_CAREER' | 'GET_CAREER_BY_ID' | 'GET_INSTRUCTOR_BY_ID' | 'GET_ALL_INSTRUCTORS' | 'SELECT_CAREER' | 'SEARCH_WORDS' | 'ADD_TO_CART' | 'REMOVE_TO_CART' | 'CLEAR_CART'
+    type: 'GET_DATA_CARROUSEL' | 'GET_ALL_CAREERS' | 'GET_ALL_CHALLENGES' | 'GET_MESSAGES_MODAL' |'SEARCH_CHALLENGES' | 'SEARCH_CHALLENGES_CAREER' | 'GET_CAREER_BY_ID' | 'GET_INSTRUCTOR_BY_ID' | 'GET_ALL_INSTRUCTORS' | 'SELECT_CAREER' | 'SEARCH_WORDS' | 'ADD_TO_CART' | 'REMOVE_TO_CART' | 'CLEAR_CART' | 'GET_ALL_PAYMENT' | 'GET_PAYMENT_MAKE'
     payload: any
 }
 export interface GetDispatchAction {
@@ -67,4 +67,22 @@ export interface TabPaymentProps {
 }
 export interface ModalProps {
     onClose: () => void;
+    content?: string;
+}
+
+export interface PaymentOption {
+    count: number;
+    price: number;
+    previousPrice: number;
+}
+
+interface PaymentType {
+    idPay: number;
+    finishDate: string;
+    options: PaymentOption[];
+}
+
+export interface Payments {
+    regularPayment: PaymentType;
+    preSalePayment: PaymentType;
 }

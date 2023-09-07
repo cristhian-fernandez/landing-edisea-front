@@ -4,6 +4,7 @@ import { getAllCareers, getAllChallenges, getAllInstructors } from "./../../redu
 import { CareersProps, ChallengeCardsProps, ChallengesProps, InstructorsProps } from '../../types/index';
 import ChallengeCard from "../challengeCard/ChallengeCard";
 import styles from './../../styles/ChallengeCards.module.css'
+import stylesLoader from './../../styles/Loader.module.css'
 
 
 const ChallengeCards = ({tabsChallenge}: ChallengeCardsProps) => {
@@ -58,12 +59,18 @@ const ChallengeCards = ({tabsChallenge}: ChallengeCardsProps) => {
       return (
         <div>
           <h2>Sin resultado ...</h2>
+          <div className={stylesLoader.loader_content}>
+            <span className={stylesLoader.loader}></span>
+          </div>
         </div>
       )
     } else {
       return (
         <div>
-          Cargando retos profesionales ...
+          <h2> Cargando retos profesionales ...</h2>
+          <div className={stylesLoader.loader_content}>
+            <span className={stylesLoader.loader}></span>
+          </div>
         </div>
       )
     }
