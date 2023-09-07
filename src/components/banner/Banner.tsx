@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import ButtonBanner from '../button/ButtonBanner';
 import styles from './../../styles/Banner.module.css';
 import stylesLoader from './../../styles/Loader.module.css';

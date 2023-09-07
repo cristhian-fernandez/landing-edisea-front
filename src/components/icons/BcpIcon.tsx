@@ -1,6 +1,4 @@
-import { IconProps } from '../../types'
-
-const BcpIcon = (props: IconProps) => {
+const BcpIcon = () => {
   return (
     <svg width="36" height="25" viewBox="0 0 36 25" fill="none">
       <rect y="0.710083" width="35.0764" height="24" rx="4.06" fill="#253B80"/>
