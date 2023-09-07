@@ -1,6 +1,8 @@
 import { Route, Routes} from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Home from './views/home/Home';
+import Footer from './components/footer/Footer';
+import './dataBase/firebase'
 const App = (): JSX.Element => {
   return (
     <div>
@@ -9,7 +11,7 @@ const App = (): JSX.Element => {
         <Route path='/' element={<Home />} />
         {/* <Route path="*" element={<PageNotFound />}/> */}
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

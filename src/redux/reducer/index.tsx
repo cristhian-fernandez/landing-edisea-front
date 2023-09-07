@@ -3,12 +3,19 @@ import {
     GET_ALL_CAREERS,
     GET_ALL_INSTRUCTORS,
     GET_ALL_CHALLENGES,
+    GET_MESSAGES_MODAL,
     SEARCH_CHALLENGES,
     SEARCH_CHALLENGES_CAREER,
     GET_CAREER_BY_ID,
     GET_INSTRUCTOR_BY_ID,
     SELECT_CAREER,
     SEARCH_WORDS,
+    GET_ALL_PAYMENT,
+    GET_PAYMENT_MAKE,
+
+    ADD_TO_CART,
+    REMOVE_TO_CART,
+    CLEAR_CART
 } from "../constants";
 import {CareersProps, ChallengesProps, actionProps} from "./../../types"
 
@@ -19,11 +26,15 @@ const initialState = {
     dataCarrousel : {},
     challenges : [],
     allChallenges : [],
+    messagesModal: [],
+    payments: {},
+    paymentmake: 0,
     carrerDetail: {},
     instructorDetail: {},
     search: false,
     selectedCareer: -1,
     searchWords: '',
+    cart : JSON.parse(window.localStorage.getItem('cart') || '[]'),
 };
 
 const rootReducer = (state = initialState, action:actionProps) => {
@@ -52,6 +63,16 @@ const rootReducer = (state = initialState, action:actionProps) => {
                 challenges : [...action.payload],
                 allChallenges : [...action.payload],
             } 
+        case GET_MESSAGES_MODAL:
+            return {
+                ...state,
+                messagesModal : action.payload
+            }
+        case GET_ALL_PAYMENT:
+            return {
+                ...state,
+                payments : action.payload
+            }
         case SEARCH_CHALLENGES:
             const filteredChallenges = challenges.filter((challenge: ChallengesProps) => {
                 const foundCareer: any = careers.find((career:CareersProps) => career.idCareer === challenge.idCareer)
@@ -75,7 +96,6 @@ const rootReducer = (state = initialState, action:actionProps) => {
                 search : search
             } 
         case GET_CAREER_BY_ID:
-            console.log('GET_CAREER_BY_ID::', action.payload[0])
             return{
                 ...state,
                 carrerDetail: action.payload[0]
@@ -94,6 +114,31 @@ const rootReducer = (state = initialState, action:actionProps) => {
             return {
                 ...state,
                 searchWords : action.payload
+            }
+        case GET_PAYMENT_MAKE:
+            return {
+                ...state,
+                paymentMake : action.payload
+            }
+        case ADD_TO_CART:
+            const addValue = [...state.cart, action.payload];
+            window.localStorage.setItem('cart', JSON.stringify(addValue));
+            return {
+                ...state,
+                cart : JSON.parse(window.localStorage.getItem('cart') || '')
+            } 
+        case REMOVE_TO_CART:
+            const removeValue = state.cart.filter((challenge:ChallengesProps)  => challenge.idChallenge !== action.payload);
+            window.localStorage.setItem('cart', JSON.stringify(removeValue));
+            return {
+                ...state,
+                cart : JSON.parse(window.localStorage.getItem('cart') || '')
+            } 
+        case CLEAR_CART:
+            window.localStorage.setItem('cart', JSON.stringify([]));
+            return {
+                ...state,
+                cart : []
             }
         default: return state;
     };

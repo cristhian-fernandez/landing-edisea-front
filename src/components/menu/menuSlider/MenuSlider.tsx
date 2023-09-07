@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import styles from  './../../../styles/Menu.module.css';
+import stylesLoader from  './../../../styles/Loader.module.css';
 import { ArrowRight, ArrowLeft } from './../../icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCareers, searchChallenges, searchChallengesCareer, searchWords, selectCareer } from './../../../redux/actions';
@@ -73,7 +74,12 @@ const MenuSlider = () => {
               </div>
             ))
           ): (
-            <div>Cargando carreras...</div>
+            <div>
+              <p>Cargando carreras...</p>
+              <div className={stylesLoader.loader_content}>
+                <span className={stylesLoader.loader}></span>
+              </div>
+            </div>
           )
         }
       </div>

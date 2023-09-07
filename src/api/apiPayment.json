@@ -1,0 +1,56 @@
+{
+    "data": {
+        "regularPayment":{
+            "idPay": 1,
+            "finishDate": "12/31/2023 12:59:59",
+            "options": [
+                {
+                    "count": 1,
+                    "price": 25,
+                    "previousPrice": 25
+                }, 
+                {
+                    "count": 2,
+                    "price": 40,
+                    "previousPrice": 50
+                }, 
+                {
+                    "count": 3,
+                    "price": 60,
+                    "previousPrice": 75
+                }, 
+                {
+                    "count": 4,
+                    "price": 80,
+                    "previousPrice": 100
+                }
+            ]
+        },
+        "preSalePayment":{
+            "idPay": 2,
+            "finishDate": "09/20/2023 12:59:59",
+            "options": [
+                {
+                    "count": 1,
+                    "price": 20,
+                    "previousPrice": 20
+                }, 
+                {
+                    "count": 2,
+                    "price": 30,
+                    "previousPrice": 40
+                }, 
+                {
+                    "count": 3,
+                    "price": 45,
+                    "previousPrice": 60
+                }, 
+                {
+                    "count": 4,
+                    "price": 60,
+                    "previousPrice": 80
+                }
+            ]
+        }
+    }
+}

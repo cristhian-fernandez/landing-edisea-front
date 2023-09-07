@@ -6,7 +6,7 @@ function Navbar() {
     return (
         <nav className={styles.nav} >
             <picture>
-                <Link to='/'><img src={logo} alt="logo_edisea" /></Link>
+                <Link to='/'><img src={logo} alt="logo_edisea" loading="lazy"/></Link>
             </picture>
         </nav>
     );

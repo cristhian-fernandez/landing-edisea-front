@@ -1,6 +1,7 @@
 html {
   --grey-100: #fbfdfe;
-  --grey-200: #f9fafb;
+  --grey-200: #f4f4f4;
+  /* --grey-200: #f9fafb; */
   /* --grey-300: #ecf0f3; */
   --grey-300: #cccccc;
   --grey-400: #b7c1c8;
@@ -39,6 +40,8 @@ html {
   --fourth-color-hover: #eb9c00;
   --fourth-color-light: #ffc757;
   --fourth-color-dark: #ffa600;
+
+  --line-color: #dddddd;
   
   --light-bg: #f0f0f0;
   --section-light-bg: rgba(130,51,255,.15);

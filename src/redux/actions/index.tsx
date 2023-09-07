@@ -3,12 +3,22 @@ import {
   GET_ALL_CAREERS,
   GET_ALL_CHALLENGES,
   GET_ALL_INSTRUCTORS,
+  GET_MESSAGES_MODAL,
   SEARCH_CHALLENGES,
   SEARCH_CHALLENGES_CAREER,
   GET_CAREER_BY_ID,
   GET_INSTRUCTOR_BY_ID,
   SELECT_CAREER,
   SEARCH_WORDS,
+  GET_ALL_PAYMENT,
+  GET_PAYMENT_MAKE,
+
+  ADD_TO_CART,
+  REMOVE_TO_CART,
+  ADD_ONE_FROM_CART,
+  REMOVE_ONE_FROM_CART,
+  // CREATE_CART,
+  CLEAR_CART,
 } from "../constants/";
 import { Dispatch } from 'redux';
 import {GetDispatchAction} from "./../../types"
@@ -16,6 +26,8 @@ import apiCarrousel from './../../api/apiCarrousel.json'
 import apiCareers from './../../api/apiCareers.json'
 import apiChallenges from './../../api/apiChallenges.json'
 import apiInstructors from './../../api/apiInstructors.json'
+import apiMessagesModal from './../../api/apiMessagesModal.json'
+import apiPayment from './../../api/apiPayment.json'
 
 export const getDataCarrousel = () => {
   return async (dispatch: Dispatch<GetDispatchAction>) => {
@@ -23,6 +35,34 @@ export const getDataCarrousel = () => {
       const response = apiCarrousel;
       dispatch({
         type: GET_DATA_CARROUSEL,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getMessagesModal = () => {
+  return async (dispatch: Dispatch<GetDispatchAction>) => {
+    try {
+      const response = apiMessagesModal;
+      dispatch({
+        type: GET_MESSAGES_MODAL,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getAllPayment = () => {
+  return async (dispatch: Dispatch<GetDispatchAction>) => {
+    try {
+      const response = apiPayment;
+      dispatch({
+        type: GET_ALL_PAYMENT,
         payload: response.data,
       });
     } catch (error) {
@@ -108,6 +148,13 @@ export const searchWords = (search: string) => {
   }
 }
 
+export const getPaymentMake = (payment: number) => {
+  return {
+      type : GET_PAYMENT_MAKE,
+      payload : payment
+  }
+}
+
 export const searchChallenges = (search: string) => {
   return {
       type : SEARCH_CHALLENGES,
@@ -126,5 +173,51 @@ export const selectCareer = (id: number) => {
   return {
       type : SELECT_CAREER,
       payload : id
+  }
+}
+
+export const addToCart = (cart: any) => {
+  return {
+      type: ADD_TO_CART,
+      payload : cart
+  }
+}
+
+export const removeToCart = (id: number) => {
+  return {
+      type: REMOVE_TO_CART,
+      payload : id
+  }
+}
+
+export const addOneFromCart = (id: number) => {
+  return {
+      type: ADD_ONE_FROM_CART,
+      payload : id
+  }
+}
+export const removeOneFromCart = (id: number) => {
+  return {
+      type: REMOVE_ONE_FROM_CART,
+      payload : id
+  }
+}
+
+// export const createCart = (values) => {
+//   return async (dispatch) => {
+//       axios.post(urlTest, values)
+//       .then(responde => {
+//           dispatch({
+//               type : CREATE_CART,
+//               payload : responde.data
+//           })
+//       })
+//       .catch( e => console.log(e));
+//   }
+// }
+
+export const clearCart = () => {
+  return {
+      type: CLEAR_CART
   }
 }

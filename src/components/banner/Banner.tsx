@@ -1,9 +1,22 @@
+import { useState, useEffect } from "react";
 import ButtonBanner from '../button/ButtonBanner';
 import styles from './../../styles/Banner.module.css';
+import stylesLoader from './../../styles/Loader.module.css';
+
 const Banner = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setIsLoading(false); 
+  };
+
   return (
     <div className={styles.banner}>
       <div className={styles.banner_picture}>
+      {isLoading && 
+        <div className={stylesLoader.loader_content}>
+          <span className={stylesLoader.loader}></span>
+        </div>}
         <picture >
           <source
             media="(min-width: 1366px)"
@@ -29,8 +42,10 @@ const Banner = () => {
             className=""
             srcSet="https://www.crehana.com/static/img/crehana-lives/banner-320.png?fit=crop&dpr=1 1x, https://www.crehana.com/static/img/crehana-lives/banner-320.png?fit=crop&dpr=2 2x"
             src="https://www.crehana.com/static/img/crehana-lives/banner-320.png?fit=crop"
-            alt="Crehana Live!"
+            alt="Edisea Live!"
             decoding="async"
+            onLoad={handleImageLoad}
+            loading="lazy"
           />
         </picture>
       </div>
