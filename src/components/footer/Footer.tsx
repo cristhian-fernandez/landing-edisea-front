@@ -7,7 +7,7 @@ const Footer = () => {
     let urlFacebook = 'https://www.facebook.com/edisea.profesional';
     let urlInstagram = 'https://www.instagram.com/edisea_profesional/';
     let urlTiktok = 'https://www.tiktok.com/@clubedisea';
-    let urlWhatsapp = `https://api.whatsapp.com/send?phone=+51951420376&text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20las%20Clases%20de%20programaci%C3%B3n%20en%20Edisea%20%F0%9F%98%81`;
+    let urlWhatsapp = `https://api.whatsapp.com/send?phone=+51942753436&text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20los%20retos%20profesionales%20en%20Edisea.`;
 
     return (
         <div className={styles.footer}>
@@ -15,7 +15,7 @@ const Footer = () => {
                 <h3>Escríbenos</h3>
                 <div onClick={() => window.open(urlWhatsapp)}>
                     <span><WhatsappIcon /></span>
-                    <span className={styles.phone}>+51 951 420 376</span>
+                    <span className={styles.phone}>+51 942 753 436</span>
                 </div>
             </div>
             <div className={styles.footer_brands}>
