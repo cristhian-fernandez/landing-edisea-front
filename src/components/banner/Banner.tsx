@@ -3,7 +3,10 @@ import ButtonBanner from '../button/ButtonBanner';
 import styles from './../../styles/Banner.module.css';
 import stylesLoader from './../../styles/Loader.module.css';
 
-const Banner = () => {
+interface BannerProps {
+  soon: Boolean
+}
+const Banner = ({soon}: BannerProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleImageLoad = () => {
@@ -54,8 +57,17 @@ const Banner = () => {
           <h1>Retos Profesionales</h1>
           <div className={styles.banner_live}><span className={styles.live__icon}></span>LIVE</div>
         </div>
-        <h2>Una nueva manera de definir tu carrera antes de entrar a la universidad</h2>
-        <ButtonBanner titleButton={'Ver todos nuestros retos'}/>
+        
+        {
+          soon ? 
+          <h2>Pronto lanzaremos Edisea, la plataforma en línea que te llevará a experiencias laborales reales a través de talleres virtuales</h2> :
+          <h2>Una nueva manera de definir tu carrera antes de entrar a la universidad</h2>
+        }
+
+        {
+          !soon && <ButtonBanner titleButton={'Ver todos nuestros retos'}/>
+        }
+        
       </div>
     </div>
   )

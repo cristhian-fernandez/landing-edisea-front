@@ -1,0 +1,17 @@
+.iframe_preinscription{
+    height:3070px;
+}
+
+.container_loader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@media only screen and (min-width: 950px) {
+    .iframe_preinscription{
+        height:2980px
+    }
+}

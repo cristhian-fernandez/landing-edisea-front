@@ -6,7 +6,7 @@ import Cta from "../../components/sections/home/Cta";
 const Home = (): JSX.Element => {
   return(
     <>
-      <Banner />
+      <Banner soon={false}/>
       <Information />
       <Challenges />
       <Cta />
