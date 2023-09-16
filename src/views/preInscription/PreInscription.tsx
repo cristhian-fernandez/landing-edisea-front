@@ -11,6 +11,7 @@ const PreInscription = () => {
     <div>
       {loading && <div className={styles.container_loader}>
         <div className={stylesLoader.loader_content}>
+            <h2>Cargando ...</h2>
             <span className={stylesLoader.loader}></span>
         </div>  
       </div>}
