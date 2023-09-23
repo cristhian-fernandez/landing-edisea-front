@@ -1,6 +1,6 @@
 import { Route, Routes} from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-// import Home from './views/home/Home';
+import Home from './views/home/Home';
 import Footer from './components/footer/Footer';
 import './dataBase/firebase'
 import PreInscription from './views/preInscription/PreInscription';
@@ -10,10 +10,10 @@ const App = (): JSX.Element => {
     <div>
       <Navbar/>
       <Routes>
-        {/* <Route path='/' element={<Home />} /> */}
         {/* <Route path='/' element={<Soon />} /> */}
         <Route path='/' element={<PreInscription />} />
         <Route path='/pre-inscripcion' element={<PreInscription />} />
+        <Route path='/inicio' element={<Home />} />
         {/* <Route path="*" element={<PageNotFound />}/> */}
       </Routes>
       <Footer />
