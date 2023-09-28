@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './../../../styles/Modal.module.css';
-import {Graduation, Money, Trophy} from './../../icons'
-import TabSelectChallenge from '../../tabs/tabsPay/TabSelectChallenge';
+// import {Graduation, Money, Trophy} from './../../icons'
+import {Money, Trophy} from './../../icons'
+// import TabSelectChallenge from '../../tabs/tabsPay/TabSelectChallenge';
 import TabSelectPayment from '../../tabs/tabsPay/TabSelectPayment';
 import TabConfirmPayment from '../../tabs/tabsPay/TabConfirmPayment';
 import { ModalProps } from '../../../types';
