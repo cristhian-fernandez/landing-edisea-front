@@ -1,7 +1,8 @@
 import { useState } from "react";
-import AccordionSummary from "./AccordionSummary"
+// import AccordionSummary from "./AccordionSummary"
 import styles from './../../../styles/Accordion.module.css';
-import {BcpIcon, InterbankIcon, WhatsappIcon} from './../../icons'
+import {BcpIcon} from './../../icons'
+// import {BcpIcon, InterbankIcon, WhatsappIcon} from './../../icons'
 import yapePath from './../../../assets/yape_plin_icon.png'
 import { useSelector } from "react-redux";
 import { formatPayment } from "../../../utils/formatData";

@@ -1,6 +1,6 @@
-import Challenges from "../../components/sections/home/Challenges";
-import Banner from "../../components/banner/Banner";
-import Information from "../../components/sections/home/Information";
+// import Challenges from "../../components/sections/home/Challenges";
+// import Banner from "../../components/banner/Banner";
+// import Information from "../../components/sections/home/Information";
 import Cta from "../../components/sections/home/Cta";
 import ChallengeProfessional from "../../components/sections/home/ChallengeProfessional";
 
