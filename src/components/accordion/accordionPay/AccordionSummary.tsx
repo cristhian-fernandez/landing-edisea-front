@@ -9,8 +9,9 @@ import { getAllPayment} from '../../../redux/actions';
 const AccordionSummary = () => {
   const cart = useSelector((state:any) => state.cart);
   const payments = useSelector((state:any) => state.payments);
-  const [isPresale, setIsPresale] = useState(false)
-  const currentDate = new Date();
+  // const [isPresale, setIsPresale] = useState(false)
+  const [isPresale] = useState(false)
+  // const currentDate = new Date();
 
   const dispatch:any = useDispatch();
   useEffect(() => {
