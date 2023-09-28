@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { formatPayment, getPreSalePayment, getRegularPayment } from '../../../utils/formatData';
 import styles from './../../../styles/Accordion.module.css';
-import { getAllPayment, getPaymentMake } from '../../../redux/actions';
+// import { getAllPayment, getPaymentMake } from '../../../redux/actions';
+import { getAllPayment} from '../../../redux/actions';
 
 
 const AccordionSummary = () => {

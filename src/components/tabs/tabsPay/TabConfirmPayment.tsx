@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState} from "react";
+import { useDispatch} from "react-redux";
 import useForm from "../../../hooks/useForm";
 import { FormFields, TabPaymentProps } from "../../../types";
 import FormPayment from "../../form/FormPayment"
