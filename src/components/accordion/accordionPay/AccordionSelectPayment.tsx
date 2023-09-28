@@ -25,10 +25,10 @@ const AccordionSelectPayment = () => {
     setSelectedOption(option);
   };
 
-  const handleWhatsappClick = () => {
-    const whatsappURL = 'https://api.whatsapp.com/send?phone=+51942753436&text=Hola,%20quiero%20participar%20en%20el%20Reto%20y%20quisiera%20ver%20otra%20opci%C3%B3n%20de%20pago.';
-    window.open(whatsappURL, '_blank');
-  };
+  // const handleWhatsappClick = () => {
+  //   const whatsappURL = 'https://api.whatsapp.com/send?phone=+51942753436&text=Hola,%20quiero%20participar%20en%20el%20Reto%20y%20quisiera%20ver%20otra%20opci%C3%B3n%20de%20pago.';
+  //   window.open(whatsappURL, '_blank');
+  // };
 
   return (
     
