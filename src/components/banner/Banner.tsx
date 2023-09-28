@@ -65,7 +65,7 @@ const Banner = ({soon}: BannerProps) => {
         }
 
         {
-          !soon && <ButtonBanner titleButton={'Ver todos nuestros retos'}/>
+          !soon && <ButtonBanner titleButton={'Ver video'}/>
         }
         
       </div>

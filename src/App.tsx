@@ -11,9 +11,10 @@ const App = (): JSX.Element => {
       <Navbar/>
       <Routes>
         {/* <Route path='/' element={<Soon />} /> */}
-        <Route path='/' element={<PreInscription />} />
-        <Route path='/pre-inscripcion' element={<PreInscription />} />
-        <Route path='/inicio' element={<Home />} />
+        {/* <Route path='/' element={<PreInscription />} /> */}
+        {/* <Route path='/pre-inscripcion' element={<PreInscription />} /> */}
+        {/* <Route path='/inicio' element={<Home />} /> */}
+        <Route path='/' element={<Home />} />
         {/* <Route path="*" element={<PageNotFound />}/> */}
       </Routes>
       <Footer />

@@ -11,15 +11,15 @@ import styles from './../../../styles/Loader.module.css'
 const db = getFirestore(dbConnected)
 
 const TabConfirmPayment = ({handleNext}: TabPaymentProps) => {
-  const cart = useSelector((state:any) => state.cart);
+  // const cart = useSelector((state:any) => state.cart);
   const [isLoading, setIsLoading] = useState(false);
-  const [showNoChallengeError, setShowNoChallengeError] = useState(false);
+  // const [showNoChallengeError, setShowNoChallengeError] = useState(false);
   const dispatch:any = useDispatch();
 
-  useEffect(() => {
-    if (cart.length === 0) setShowNoChallengeError(true);
-    else setShowNoChallengeError(false);
-  }, [cart]);
+  // useEffect(() => {
+  //   if (cart.length === 0) setShowNoChallengeError(true);
+  //   else setShowNoChallengeError(false);
+  // }, [cart]);
 
   const { formValues, handleInputChange, handleSubmit, errors } = useForm({
     initialValues: {
@@ -29,24 +29,17 @@ const TabConfirmPayment = ({handleNext}: TabPaymentProps) => {
       whatsapp: '',
     },
     onSubmit: async (data: FormFields) => {
-
-      if (cart.length === 0) {
-        setShowNoChallengeError(true);
-      } else {
-        setIsLoading(true);
-
-        try {
-          await addDoc(collection(db, "User"), { 
-            ...data,
-            challenges: cart
-          });
-          dispatch(clearCart());
-          handleNext();
-        } catch (error) {
-          console.error("Error al enviar los datos a Firebase:", error);
-        } finally {
-          setIsLoading(false);
-        }
+      setIsLoading(true);
+      try {
+        await addDoc(collection(db, "User"), { 
+          ...data
+        });
+        dispatch(clearCart());
+        handleNext();
+      } catch (error) {
+        console.error("Error al enviar los datos a Firebase:", error);
+      } finally {
+        setIsLoading(false);
       }
     },
     validate: (values: FormFields) => {
@@ -86,11 +79,11 @@ const TabConfirmPayment = ({handleNext}: TabPaymentProps) => {
             handleSubmit={handleSubmit}
             errors={errors}
           />
-          {showNoChallengeError && (
+          {/* {showNoChallengeError && (
             <div className={styles.error_message}>
               No tienes ningún reto seleccionado
             </div>
-          )}
+          )} */}
         </div>
       )}
     </div>

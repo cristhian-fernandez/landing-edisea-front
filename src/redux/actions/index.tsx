@@ -12,6 +12,7 @@ import {
   SEARCH_WORDS,
   GET_ALL_PAYMENT,
   GET_PAYMENT_MAKE,
+  GET_COUPONS,
 
   ADD_TO_CART,
   REMOVE_TO_CART,
@@ -28,6 +29,7 @@ import apiChallenges from './../../api/apiChallenges.json'
 import apiInstructors from './../../api/apiInstructors.json'
 import apiMessagesModal from './../../api/apiMessagesModal.json'
 import apiPayment from './../../api/apiPayment.json'
+import apiCoupons from './../../api/apiCoupons.json'
 
 export const getDataCarrousel = () => {
   return async (dispatch: Dispatch<GetDispatchAction>) => {
@@ -221,3 +223,17 @@ export const clearCart = () => {
       type: CLEAR_CART
   }
 }
+
+export const getAllCoupons = () => {
+  return async (dispatch: Dispatch<GetDispatchAction>) => {
+    try {
+      const response = apiCoupons;
+      dispatch({
+        type: GET_COUPONS,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

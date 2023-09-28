@@ -16,19 +16,19 @@ const AccordionSummary = () => {
     dispatch(getAllPayment());
   }, [dispatch]);
 
-  useEffect(() => {
+  // useEffect(() => {
    
-    if (typeof payments === 'object' && payments.hasOwnProperty('preSalePayment')) {
-      const finishDatePreSale = new Date(payments.preSalePayment.finishDate);
-      if (currentDate <= finishDatePreSale) {
-        setIsPresale(true);
-        dispatch(getPaymentMake(getPreSalePayment(payments, cart.length)));
-      } else {
-        setIsPresale(false);
-        dispatch(getPaymentMake(getRegularPayment(payments, cart.length)));
-      }
-    } 
-  }, [payments, cart.length, dispatch]);
+  //   if (typeof payments === 'object' && payments.hasOwnProperty('preSalePayment')) {
+  //     const finishDatePreSale = new Date(payments.preSalePayment.finishDate);
+  //     if (currentDate <= finishDatePreSale) {
+  //       setIsPresale(true);
+  //       dispatch(getPaymentMake(getPreSalePayment(payments, cart.length)));
+  //     } else {
+  //       setIsPresale(false);
+  //       dispatch(getPaymentMake(getRegularPayment(payments, cart.length)));
+  //     }
+  //   } 
+  // }, [payments, cart.length, dispatch]);
 
   return (
     <div className={`${styles.accordion_item} ${styles.accordion_item_summary}`}>
