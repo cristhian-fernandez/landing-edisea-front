@@ -5,6 +5,7 @@ import {BcpIcon, InterbankIcon, WhatsappIcon} from './../../icons'
 import yapePath from './../../../assets/yape_plin_icon.png'
 import { useSelector } from "react-redux";
 import { formatPayment } from "../../../utils/formatData";
+import yape_qr from './../../../assets/yape_qr.png';
 
 const AccordionSelectPayment = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(2);
@@ -31,7 +32,7 @@ const AccordionSelectPayment = () => {
   return (
     
     <div className={styles.accordion}>
-      <AccordionSummary />
+      {/* <AccordionSummary /> */}
       <p className={styles.select_pay_title}>Selecciona una opción para realizar el pago <span>(Recuerda tomar foto a tu transferencia)</span></p>
 
       <div className={`${styles.accordion_item_pay} ${activeIndex === 2 ? styles.active : ''}`}>
@@ -72,6 +73,9 @@ const AccordionSelectPayment = () => {
               <p>Número Celular Plin</p>
               <span>942 753 436</span>
             </div>
+            <picture>
+              <img src={yape_qr} alt="Yape Edisea" />
+            </picture>
           </div>
         </div>
       </div>
@@ -117,7 +121,7 @@ const AccordionSelectPayment = () => {
           </div>
         </div>
       </div>
-      <div className={`${styles.accordion_item_pay} ${activeIndex === 1 ? styles.active : ''}`}>
+      {/* <div className={`${styles.accordion_item_pay} ${activeIndex === 1 ? styles.active : ''}`}>
         <div className={`${styles.accordion_title} ${selectedOption === 1 ? styles.active : ''}`}
           onClick={() => {
             toggleAccordion(1)
@@ -190,7 +194,7 @@ const AccordionSelectPayment = () => {
             </div>
           </div>
         </div>
-      </div>     
+      </div>      */}
 
       <div>
         <span className={styles.note}>* Nota: Recuerda tomar foto a tu transferencia</span>

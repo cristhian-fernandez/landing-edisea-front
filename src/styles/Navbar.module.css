@@ -5,7 +5,8 @@
     padding-bottom: 30px;
     padding-left: var(--body-padding-left);
     padding-right: var(--body-padding-right);
-    background-color: var(--nav-bg);
+    /* background-color: var(--nav-bg); */
+    background-color: transparent;
 }
 picture{
     width: 150px;

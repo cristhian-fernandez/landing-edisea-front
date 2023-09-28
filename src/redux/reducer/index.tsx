@@ -12,6 +12,7 @@ import {
     SEARCH_WORDS,
     GET_ALL_PAYMENT,
     GET_PAYMENT_MAKE,
+    GET_COUPONS,
 
     ADD_TO_CART,
     REMOVE_TO_CART,
@@ -35,6 +36,7 @@ const initialState = {
     selectedCareer: -1,
     searchWords: '',
     cart : JSON.parse(window.localStorage.getItem('cart') || '[]') as any[],
+    coupons : [] as any[],
 };
 
 const rootReducer = (state = initialState, action:actionProps) => {
@@ -139,6 +141,11 @@ const rootReducer = (state = initialState, action:actionProps) => {
             return {
                 ...state,
                 cart : []
+            }
+        case GET_COUPONS:
+            return {
+                ...state,
+                coupons : action.payload
             }
         default: return state;
     };
