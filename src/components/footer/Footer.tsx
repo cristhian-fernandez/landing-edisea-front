@@ -1,7 +1,7 @@
 
 import styles from './../../styles/Footer.module.css';
 import { FacebookIcon, InstagramIcon, WhatsappIcon, TiktokIcon, YoutubeIcon } from './../icons'
-
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     let urlFacebook = 'https://www.facebook.com/edisea.profesional';
@@ -26,7 +26,7 @@ const Footer = () => {
                     <span><YoutubeIcon /></span>
                 </div>
                 <div className={styles.copy} >
-                    <span>Copyright © 2022 | Desarrollado por Edisea</span>
+                    <Link to='/pre-inscripcion'><span>Copyright © 2022 | Desarrollado por Edisea</span></Link>
                 </div>
             </div>
         </div>
