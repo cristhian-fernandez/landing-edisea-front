@@ -4,6 +4,7 @@ import Home from './views/home/Home';
 import Footer from './components/footer/Footer';
 import './dataBase/firebase'
 import PreInscription from './views/preInscription/PreInscription';
+import RegistrationList from './views/registrationList/RegistrationList';
 // import Soon from './views/soon/Soon';
 const App = (): JSX.Element => {
   return (
@@ -12,9 +13,10 @@ const App = (): JSX.Element => {
       <Routes>
         {/* <Route path='/' element={<Soon />} /> */}
         {/* <Route path='/' element={<PreInscription />} /> */}
-        <Route path='/pre-inscripcion' element={<PreInscription />} />
         {/* <Route path='/inicio' element={<Home />} /> */}
         <Route path='/' element={<Home />} />
+        <Route path='/pre-inscripcion' element={<PreInscription />} />
+        <Route path='/lista-inscritos' element={<RegistrationList />} />
         {/* <Route path="*" element={<PageNotFound />}/> */}
       </Routes>
       <Footer />

@@ -1,3 +1,20 @@
+@font-face {
+  font-family: 'MontserratAlternates-Bold';
+  src: url('./assets/fonts/MontserratAlternates-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'MontserratAlternates-Medium';
+  src: url('./assets/fonts/MontserratAlternates-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'MontserratAlternates-Regular';
+  src: url('./assets/fonts/MontserratAlternates-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'MontserratAlternates-SemiBold';
+  src: url('./assets/fonts/MontserratAlternates-SemiBold.woff') format('woff');
+}
+
 html {
   --grey-100: #fbfdfe;
   --grey-200: #f4f4f4;
@@ -54,7 +71,7 @@ html {
   --black-color: #42535e;
   
   --bigger-font-size: 2.5rem;
-  --h1-font-size: 2rem;
+  --h1-font-size: 1.9rem;
   --h2-font-size: 1.5625rem;
   --h3-font-size: 1.3125rem;
   --h4-font-size: 1.0625rem;
@@ -77,8 +94,11 @@ html {
   --text-color: var(--grey-700);
   --border-color: var(--grey-300);
 
-  --heading-font: "Commissioner",sans-serif;
-  --body-font: "Nunito",sans-serif;
+  --title-font: "MontserratAlternates-Medium", sans-serif;
+  --heading-font: "MontserratAlternates-SemiBold", sans-serif;
+  --body-font: "MontserratAlternates-Regular", sans-serif;
+  /* --heading-font: "Commissioner",sans-serif;
+  --body-font: "Nunito",sans-serif; */
   /* --body-font: "Manrope",sans-serif; */
   --icon-theme-color : var(--fourth-color);
 
