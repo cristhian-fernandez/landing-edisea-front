@@ -58,7 +58,7 @@ const FormPayment: React.FC<FormProps> = ({
         </div>
         {errors.whatsapp && <div className={styles.error}>{errors.whatsapp}</div>}
       </div>
-      <button type="submit" className={styles.form_button}>Finalizar</button>
+      <button type="submit" className={styles.form_button}>Completo</button>
     </form>
   );
 };

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import styles from './../../styles/Challengeprofessional.module.css'
 import { ArrowBottom } from '../icons';
-import { getAllCoupons, getPaymentMake } from '../../redux/actions';
+import { getAllCoupons, getPaymentMake, getValidCoupon } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import ModalPayment from '../modal/modalPay/ModalPayment';
 
 const PaymentEvent = () => {
   const coupons = useSelector((state:any) => state.coupons);
-  const [activeIndex, setActiveIndex] = useState<number>(1);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
   const [textCoupon, setTextCoupon] = useState<string>('');
   const [isValidCoupon, setIsValidCoupon] = useState<boolean>(false);
   const [isMessageCoupon, setIsMessageCoupon] = useState<boolean>(false);
@@ -34,6 +34,7 @@ const PaymentEvent = () => {
     setIsValidCoupon(isValid);
     setIsMessageCoupon(true);
     isValid ? dispatch(getPaymentMake(19)) : dispatch(getPaymentMake(29)) 
+    isValid ? dispatch(getValidCoupon(textCoupon)) : dispatch(getValidCoupon('')) 
   }
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -51,7 +52,7 @@ const PaymentEvent = () => {
       <div className={styles.payment_event_date}>
         <div>
           <p className={styles.event_date_label}>Fecha</p>
-          <p>Sábado 14 de Octubre, 2023</p>
+          <p>Sábado 25 de Noviembre, 2023</p>
         </div>
         <div>
           <p className={styles.event_date_label}>Horario</p>
@@ -65,7 +66,7 @@ const PaymentEvent = () => {
           <span>Simulación de Experiencias Laborales</span>
           <span>Competencia de Profesionales</span>
           <span>Slam de Profesionales</span>
-          <span className={styles.benefits_item_labeled}>Precio Normal: S/ 30.00</span>
+          <span className={styles.benefits_item_labeled}>Precio Normal: S/ 39.00</span>
         </div>
       </div>
       <div className={styles.payment_event_discount}>

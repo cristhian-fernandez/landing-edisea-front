@@ -1,25 +1,28 @@
 import { useState} from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import useForm from "../../../hooks/useForm";
-import { FormFields, TabPaymentProps } from "../../../types";
+import { FormFields, TabConfirmPaymentProps } from "../../../types";
 import FormPayment from "../../form/FormPayment"
 import { clearCart } from "../../../redux/actions";
 import { getFirestore, addDoc, collection } from 'firebase/firestore';
 import dbConnected from './../../../dataBase/firebase';
-import styles from './../../../styles/Loader.module.css'
+import styles from './../../../styles/Loader.module.css';
+import stylesModal from './../../../styles/Modal.module.css';
+import ButtonCall from "../../button/ButtonCall";
+import { WhatsappIcon } from "../../icons";
+import { getCurrentDate, getCurrentTime } from "../../../utils/formatDate";
 
 const db = getFirestore(dbConnected)
 
-const TabConfirmPayment = ({handleNext}: TabPaymentProps) => {
-  // const cart = useSelector((state:any) => state.cart);
+const TabConfirmPayment = ({setTabsFinished, tabsFinished, onClose}: TabConfirmPaymentProps) => {
   const [isLoading, setIsLoading] = useState(false);
-  // const [showNoChallengeError, setShowNoChallengeError] = useState(false);
   const dispatch:any = useDispatch();
+  const paymentMake = useSelector((state:any) => state.paymentMake);
+  const validCoupon = useSelector((state:any) => state.validCoupon);
 
-  // useEffect(() => {
-  //   if (cart.length === 0) setShowNoChallengeError(true);
-  //   else setShowNoChallengeError(false);
-  // }, [cart]);
+  const [nameForm, setNameForm] = useState('');
+  const nameCareer = 'Psicología';
+  const nameChallenge = 'Reto de Psicología';
 
   const { formValues, handleInputChange, handleSubmit, errors } = useForm({
     initialValues: {
@@ -30,12 +33,27 @@ const TabConfirmPayment = ({handleNext}: TabPaymentProps) => {
     },
     onSubmit: async (data: FormFields) => {
       setIsLoading(true);
+      setNameForm(data.name)
+      const  dataRegistered = {
+        date: getCurrentDate(),
+        hour: getCurrentTime(),
+        name: data.name,
+        country: data.country,
+        phone: data.whatsapp,
+        email: data.email,
+        career: nameCareer,
+        challenge: nameChallenge,
+        coupon: validCoupon,
+        payment: `${paymentMake}.00`
+      }
       try {
         await addDoc(collection(db, "User"), { 
-          ...data
+          // ...data
+          ...dataRegistered
         });
         dispatch(clearCart());
-        handleNext();
+        setTabsFinished(true)
+        console.log('dataRegistered:::', dataRegistered)
       } catch (error) {
         console.error("Error al enviar los datos a Firebase:", error);
       } finally {
@@ -63,14 +81,40 @@ const TabConfirmPayment = ({handleNext}: TabPaymentProps) => {
       return errors;
     },
   });
+
+  const messageWhatsapp = (name:string, challenge: string) => {
+    let message = ''
+    message += `Hola! Soy *${name}*, y me inscribi a ${challenge}. `;
+    message += `Quiero confirmar mi participación. Gracias`;
+
+    const encodeText = encodeURI(message);
+    const urlWhatsapp = `https://api.whatsapp.com/send?phone=+51942753436&text=${encodeText}`;
+    window.open(urlWhatsapp);
+  }
+
+  const confirmParticipation = () => {
+    console.log('entro aqui')
+    messageWhatsapp(nameForm, nameChallenge)
+    onClose();
+  };
+
   return (
     <div>
       {isLoading ? (
         <div className={styles.loader_content}>
           <span className={styles.loader}></span>
         </div>
-
-      ) : (
+      ) : tabsFinished ? (
+        <div className={stylesModal.tab_confirm}>
+          <p className={stylesModal.confirm_title}>Registro completo</p>
+          <p>¡Gracias por confirmar tu registro para Reto de Profesionales! Estamos emocionados de tenerte con nosotros.</p>
+          <p>Esperamos que esta experiencia sea enriquecedora y te ayude a avanzar en tu camino hacia tu éxito profesional.</p>
+          <p className={stylesModal.confirm_footer}></p>
+          <div className={stylesModal.centered}>
+            <ButtonCall title="Confirmar mi participación" onClick={confirmParticipation} icon={ <WhatsappIcon fill="var(--white-color)" translateY={4}/>}/>
+          </div>
+        </div>
+      ): (
         <div>
           <FormPayment
             title={'Confirma tu participación llenando el formulario'}
@@ -79,11 +123,6 @@ const TabConfirmPayment = ({handleNext}: TabPaymentProps) => {
             handleSubmit={handleSubmit}
             errors={errors}
           />
-          {/* {showNoChallengeError && (
-            <div className={styles.error_message}>
-              No tienes ningún reto seleccionado
-            </div>
-          )} */}
         </div>
       )}
     </div>

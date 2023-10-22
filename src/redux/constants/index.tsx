@@ -13,6 +13,7 @@ export const GET_INSTRUCTOR_BY_ID = "GET_INSTRUCTOR_BY_ID";
 export const SELECT_CAREER = "SELECT_CAREER";
 export const SEARCH_WORDS = "SEARCH_WORDS";
 export const GET_COUPONS = "GET_COUPONS";
+export const GET_COUPON = "GET_COUPON";
 
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_TO_CART = 'REMOVE_TO_CART';
