@@ -1,9 +1,10 @@
 export interface IconProps {
     fill?: string;
+    translateY?: number;
 }
 
 export interface actionProps {
-    type: 'GET_DATA_CARROUSEL' | 'GET_ALL_CAREERS' | 'GET_ALL_CHALLENGES' | 'GET_MESSAGES_MODAL' |'SEARCH_CHALLENGES' | 'SEARCH_CHALLENGES_CAREER' | 'GET_CAREER_BY_ID' | 'GET_INSTRUCTOR_BY_ID' | 'GET_ALL_INSTRUCTORS' | 'SELECT_CAREER' | 'SEARCH_WORDS' | 'ADD_TO_CART' | 'REMOVE_TO_CART' | 'CLEAR_CART' | 'GET_ALL_PAYMENT' | 'GET_PAYMENT_MAKE' | 'GET_COUPONS'
+    type: 'GET_DATA_CARROUSEL' | 'GET_ALL_CAREERS' | 'GET_ALL_CHALLENGES' | 'GET_MESSAGES_MODAL' |'SEARCH_CHALLENGES' | 'SEARCH_CHALLENGES_CAREER' | 'GET_CAREER_BY_ID' | 'GET_INSTRUCTOR_BY_ID' | 'GET_ALL_INSTRUCTORS' | 'SELECT_CAREER' | 'SEARCH_WORDS' | 'ADD_TO_CART' | 'REMOVE_TO_CART' | 'CLEAR_CART' | 'GET_ALL_PAYMENT' | 'GET_PAYMENT_MAKE' | 'GET_COUPONS' | 'GET_COUPON'
     payload: any
 }
 export interface GetDispatchAction {
@@ -65,9 +66,20 @@ export interface FormProps {
 export interface TabPaymentProps {
     handleNext: () => void;
 }
+
+export type Tab = {
+    title: string;
+    icon: React.ReactNode;
+};
 export interface ModalProps {
     onClose: () => void;
     content?: string;
+}
+export interface ModalTabsProps {
+    onClose: () => void;
+    tabs: Tab[];
+    contentComponents: React.ReactNode[]; 
+    tabsFinished: Boolean;
 }
 
 export interface PaymentOption {
@@ -85,4 +97,16 @@ interface PaymentType {
 export interface Payments {
     regularPayment: PaymentType;
     preSalePayment: PaymentType;
+}
+
+export interface TabConfirmPaymentProps {
+    setTabsFinished: (value: boolean) => void;
+    tabsFinished: boolean;
+    onClose: () => void;
+}
+
+export interface ButtonCallProps {
+    title: string;
+    onClick: () => void;
+    icon: React.ReactNode;
 }

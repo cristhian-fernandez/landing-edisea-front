@@ -13,6 +13,7 @@ import {
   GET_ALL_PAYMENT,
   GET_PAYMENT_MAKE,
   GET_COUPONS,
+  GET_COUPON,
 
   ADD_TO_CART,
   REMOVE_TO_CART,
@@ -237,3 +238,10 @@ export const getAllCoupons = () => {
     }
   };
 };
+
+export const getValidCoupon = (payment: string) => {
+  return {
+      type : GET_COUPON,
+      payload : payment
+  }
+}

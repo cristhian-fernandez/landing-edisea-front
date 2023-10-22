@@ -97,6 +97,7 @@
     font-weight: bold;
     border: 1px solid var(--first-color-light);
     position: relative;
+    background-color: var(--first-color-light);
 }
 
 .tab_title{
@@ -192,9 +193,22 @@
     color: var(--first-color);
     font-weight: 600;
     font-size: 20px;
+    text-align: center;
+    margin-bottom: 12px;
 }
 
 .tab_confirm .confirm_footer{
     color: var(--grey-600);
     font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.centered{
+    display: flex;
+    justify-content: center;
+}
+
+.active .circle svg.active-icon {
+    fill: #FFFFFF;
+    border: 2px solid red !important;
 }

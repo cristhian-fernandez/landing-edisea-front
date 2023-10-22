@@ -40,7 +40,8 @@ html {
   
   --first-color: #5f5cff;
   --first-color-hover: #2a28bb;
-  --first-color-light: #9492ff;
+  /* --first-color-light: #9492ff; */
+  --first-color-light: #b6b4ff;
   --first-color-dark: #504dda;
   
   --second-color: #2bd480;
