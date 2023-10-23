@@ -11,7 +11,7 @@ const RegistrationList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'User')); // Reemplaza 'User' por la colección correcta en tu base de datos
+        const querySnapshot = await getDocs(collection(db, 'User'));
         const data:any = [];
         querySnapshot.forEach((doc) => {
           data.push(doc.data()); // Agrega cada documento como un objeto a la matriz data

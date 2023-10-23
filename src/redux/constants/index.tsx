@@ -14,6 +14,7 @@ export const SELECT_CAREER = "SELECT_CAREER";
 export const SEARCH_WORDS = "SEARCH_WORDS";
 export const GET_COUPONS = "GET_COUPONS";
 export const GET_COUPON = "GET_COUPON";
+export const GET_ACCORDION_LIST = "GET_ACCORDION_LIST";
 
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_TO_CART = 'REMOVE_TO_CART';

@@ -1,0 +1,20 @@
+{
+    "data" : [
+        {
+            "title" : "¿Qué es retos de profesionales?",
+            "description": "Reto de profesionales es una competencia de profesionales en vivo donde podrán en práctica sus experiencias y conocimientos de la carrera en escenarios laborales reales. Participar en estos retos te brindara la oportunidad de evaluar si tus habilidades, interés y afinidades se relacionan con dicha profesión. En primera mano podrás observar y analizar las demandas y responsabilidades propias de la profesión que deseas seguir y esto te dará la oportunidad de evaluar si te sientes cómodo con dichas labores, si disfrutas de los desafíos que te depara tu profesión y si te encuentras satisfecho y sobre todo motivado en el desarrollo de las tareas asociadas con la carrera."
+        },
+        {
+            "title" : "¿Quiénes son los participantes de estos retos?",
+            "description": "Son profesionales experimentados y expertos en su campo, que pondrán en práctica todos sus conocimientos adquiridos, asi mismo podrán interactuar con ellos en los retos en un espacio seguro, realizarles preguntas, dudas o consultas y sobre todo recibir consejos valiosos para la toma de decisión en la carrera a elegir."
+        },
+        {
+            "title" : "¿Cómo puedo participar en estos retos?",
+            "description": "Solo dale click al botón participar, elije una opción de pago, allí saldrá el monto a cancelar, recuerda tomarle foto al momento de hacer el pago, dale al botón siguiente y llena el formulario, click en botón “Completo” y finalmente click en el botón “Confirmar mi participación”, este botón te llevara a WhatsApp donde sabremos de ti y te confirmaremos si ya estas inscrito."
+        },
+        {
+            "title" : "¿Como puedo adquirir un cupón de descuento?",
+            "description": "Ve a las redes sociales de los competidores, estamos seguros que ellos te compartirán un cupón de descuento exclusivo, y antes de darle al botón participar podrás ingresar tu cupón de descuento."
+        }
+    ]
+}
