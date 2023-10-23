@@ -14,6 +14,7 @@ import {
   GET_PAYMENT_MAKE,
   GET_COUPONS,
   GET_COUPON,
+  GET_ACCORDION_LIST,
 
   ADD_TO_CART,
   REMOVE_TO_CART,
@@ -31,6 +32,7 @@ import apiInstructors from './../../api/apiInstructors.json'
 import apiMessagesModal from './../../api/apiMessagesModal.json'
 import apiPayment from './../../api/apiPayment.json'
 import apiCoupons from './../../api/apiCoupons.json'
+import apiAccordionList from './../../api/apiAccordionList.json'
 
 export const getDataCarrousel = () => {
   return async (dispatch: Dispatch<GetDispatchAction>) => {
@@ -245,3 +247,17 @@ export const getValidCoupon = (payment: string) => {
       payload : payment
   }
 }
+
+export const getAllAccordionList = () => {
+  return async (dispatch: Dispatch<GetDispatchAction>) => {
+    try {
+      const response = apiAccordionList;
+      dispatch({
+        type: GET_ACCORDION_LIST,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

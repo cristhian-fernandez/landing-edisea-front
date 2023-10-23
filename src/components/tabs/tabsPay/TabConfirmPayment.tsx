@@ -93,7 +93,6 @@ const TabConfirmPayment = ({setTabsFinished, tabsFinished, onClose}: TabConfirmP
   }
 
   const confirmParticipation = () => {
-    console.log('entro aqui')
     messageWhatsapp(nameForm, nameChallenge)
     onClose();
   };

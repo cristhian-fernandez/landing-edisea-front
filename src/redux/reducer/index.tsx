@@ -14,6 +14,7 @@ import {
     GET_PAYMENT_MAKE,
     GET_COUPONS,
     GET_COUPON,
+    GET_ACCORDION_LIST,
 
     ADD_TO_CART,
     REMOVE_TO_CART,
@@ -38,7 +39,8 @@ const initialState = {
     searchWords: '',
     cart : JSON.parse(window.localStorage.getItem('cart') || '[]') as any[],
     coupons : [] as any[],
-    validCoupon : ''
+    validCoupon : '',
+    accordionList : [] as any[]
 };
 
 const rootReducer = (state = initialState, action:actionProps) => {
@@ -153,6 +155,11 @@ const rootReducer = (state = initialState, action:actionProps) => {
             return {
                 ...state,
                 validCoupon : action.payload
+            }
+        case GET_ACCORDION_LIST:
+            return {
+                ...state,
+                accordionList : action.payload
             }
         default: return state;
     };
