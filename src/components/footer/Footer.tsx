@@ -8,7 +8,7 @@ const Footer = () => {
     let urlFacebook = 'https://www.facebook.com/edisea.profesional';
     let urlInstagram = 'https://www.instagram.com/edisea_profesional/';
     let urlTiktok = 'https://www.tiktok.com/@clubedisea';
-    let urlWhatsapp = `https://api.whatsapp.com/send?phone=+${config.NUMBER_WHATSHAPP}&text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20los%20retos%20profesionales%20en%20Edisea.`;
+    let urlWhatsapp = `https://api.whatsapp.com/send?phone=+${config.NUMBER_WHATSHAPP_MESSAGE}&text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20los%20retos%20profesionales%20en%20Edisea.`;
 
     return (
         <div className={styles.footer}>

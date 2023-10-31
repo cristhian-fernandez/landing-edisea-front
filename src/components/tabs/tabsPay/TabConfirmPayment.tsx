@@ -89,7 +89,7 @@ const TabConfirmPayment = ({setTabsFinished, tabsFinished, onClose}: TabConfirmP
     message += `Quiero confirmar mi participación. Gracias`;
 
     const encodeText = encodeURI(message);
-    const urlWhatsapp = `https://api.whatsapp.com/send?phone=+${config.NUMBER_WHATSHAPP}&text=${encodeText}`;
+    const urlWhatsapp = `https://api.whatsapp.com/send?phone=+${config.NUMBER_WHATSHAPP_MESSAGE}&text=${encodeText}`;
     window.open(urlWhatsapp);
   }
 
