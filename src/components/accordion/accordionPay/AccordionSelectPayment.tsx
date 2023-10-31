@@ -69,11 +69,11 @@ const AccordionSelectPayment = () => {
             </div>
             <div className={styles.content_account}>
               <p>Número Celular Yape</p>
-              <span>{config.NUMBER_WHATSHAPP_TEXT}</span>
+              <span>{config.NUMBER_WHATSHAPP_YAPE}</span>
             </div>
             <div className={styles.content_account}>
               <p>Número Celular Plin</p>
-              <span>{config.NUMBER_WHATSHAPP_TEXT}</span>
+              <span>{config.NUMBER_WHATSHAPP_PLIN}</span>
             </div>
             <picture>
               <img src={yape_qr} alt="Yape Edisea" />
