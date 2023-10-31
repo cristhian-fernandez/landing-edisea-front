@@ -11,6 +11,7 @@ import stylesModal from './../../../styles/Modal.module.css';
 import ButtonCall from "../../button/ButtonCall";
 import { WhatsappIcon } from "../../icons";
 import { getCurrentDate, getCurrentTime } from "../../../utils/formatDate";
+import { config } from "../../../api/apiConfig";
 
 const db = getFirestore(dbConnected)
 
@@ -88,7 +89,7 @@ const TabConfirmPayment = ({setTabsFinished, tabsFinished, onClose}: TabConfirmP
     message += `Quiero confirmar mi participación. Gracias`;
 
     const encodeText = encodeURI(message);
-    const urlWhatsapp = `https://api.whatsapp.com/send?phone=+51942753436&text=${encodeText}`;
+    const urlWhatsapp = `https://api.whatsapp.com/send?phone=+${config.NUMBER_WHATSHAPP}&text=${encodeText}`;
     window.open(urlWhatsapp);
   }
 

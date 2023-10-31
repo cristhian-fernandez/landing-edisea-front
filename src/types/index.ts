@@ -1,3 +1,10 @@
+export interface ConfigProps {
+    APP_NAME: string,
+    APP_LOGO: string,
+    IMAGE_BG_HOME: string,
+    NUMBER_WHATSHAPP: string,
+    NUMBER_WHATSHAPP_TEXT: string
+}
 export interface IconProps {
     fill?: string;
     translateY?: number;

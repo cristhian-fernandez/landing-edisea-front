@@ -7,6 +7,7 @@ import yapePath from './../../../assets/yape_plin_icon.png'
 import { useSelector } from "react-redux";
 import { formatPayment } from "../../../utils/formatData";
 import yape_qr from './../../../assets/yape_qr.png';
+import { config } from "../../../api/apiConfig";
 
 const AccordionSelectPayment = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(2);
@@ -68,11 +69,11 @@ const AccordionSelectPayment = () => {
             </div>
             <div className={styles.content_account}>
               <p>Número Celular Yape</p>
-              <span>942 753 436</span>
+              <span>{config.NUMBER_WHATSHAPP_TEXT}</span>
             </div>
             <div className={styles.content_account}>
               <p>Número Celular Plin</p>
-              <span>942 753 436</span>
+              <span>{config.NUMBER_WHATSHAPP_TEXT}</span>
             </div>
             <picture>
               <img src={yape_qr} alt="Yape Edisea" />
