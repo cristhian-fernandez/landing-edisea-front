@@ -1,4 +1,5 @@
 import { config } from '../../../api/apiConfig';
+import { StartIcon, WhatsappIcon } from '../../icons';
 import styles from './../../../styles/Sections.module.css'
 
 const Cta = () => {
@@ -7,14 +8,26 @@ const Cta = () => {
     window.open(whatsappURL, '_blank');
   };
   return (
-    <div className={`${styles.section_plans} ${styles.section_cta}`}>
-      <h2 className={styles.section_title}>¿Solo para escolares? ¡Para nada!</h2>
-      <h3 className={styles.section_subtitle}>Nuestros retos también están enfocados para universitarios y egresados, ya que el viaje vocacional dura toda la vida.</h3>
-      <div className={styles.cta_contact}>
-        <p>¿Te quedan dudas?</p>
-        <button onClick={handleWhatsappClick}>Contáctanos</button>
+    <>
+      <div className={`${styles.section_plans} ${styles.section_cta}`}>
+        <h2 className={styles.section_title}>¿Solo para escolares? ¡Para nada!</h2>
+        <h3 className={styles.section_subtitle}>Nuestros retos también están enfocados para universitarios y egresados, ya que el viaje vocacional dura toda la vida.</h3>
       </div>
-    </div>
+      <div className={styles.cta_contact}>
+        <div className={styles.contact_content}>
+          <div className={styles.contact_text}>
+            <StartIcon style={{scale: '0.7'}}/>
+            <p className={styles.contact_text_phone}>¿Te quedan dudas?</p>
+            <p className={styles.contact_text_desktop}>¿Tienes alguna duda?</p>
+          </div>
+          <button onClick={handleWhatsappClick}>
+            <span><WhatsappIcon /></span>  
+            <span>Hablemos</span>  
+          </button>
+        </div>
+        <div className={styles.contact_line}></div>
+      </div>
+    </>
   )
 }
 

@@ -235,3 +235,7 @@ code {
     --body-padding-right: 160px;
   }
 }
+input {
+  box-sizing: border-box; 
+  max-width: 100%;
+}

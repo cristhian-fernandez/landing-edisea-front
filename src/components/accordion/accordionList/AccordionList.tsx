@@ -27,7 +27,9 @@ const AccordionList: React.FC<AccordionListProps> = ({ items }) => {
         <div key={index} className={`${styles.accordion_item} ${index === openIndex ? styles.active : ''}`}>
           <div className={styles.accordion_title} onClick={() => toggleAccordion(index)}>
             {item.title}
-            <span className={`${styles.icon} ${index === openIndex ? styles.icon_up : styles.icon_down}`}><ArrowBottom fill={index === openIndex ? 'var(--white-color)' : 'var(--first-color)'} style={{paddingBottom: '4px', scale: '1.1'}}/></span>
+            <div>
+              <span className={`${styles.icon} ${index === openIndex ? styles.icon_up : styles.icon_down}`}><ArrowBottom fill={index === openIndex ? 'var(--white-color)' : 'var(--first-color)'} style={{paddingBottom: '4px', scale: '1.1'}}/></span>
+            </div>
           </div>
           {index === openIndex && <div className={styles.accordion_content}>{item.description}</div>}
         </div>
