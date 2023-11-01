@@ -5,7 +5,16 @@ export interface ConfigProps {
     NUMBER_WHATSHAPP_MESSAGE: string,
     NUMBER_WHATSHAPP_TEXT: string,
     NUMBER_WHATSHAPP_YAPE: string,
-    NUMBER_WHATSHAPP_PLIN: string
+    NUMBER_WHATSHAPP_PLIN: string,
+    PAGE_TITLE: string,
+    PAGE_NAME: string,
+    PAGE_CONTENT: string,
+    PAGE_AUTHOR: string,
+    PAGE_KEYWORDS: string,
+    PAGE_ICON: string,
+    SOCIAL_NETWORKS_TITLE: string,
+    SOCIAL_NETWORKS_DESCRIPTION: string,
+    SOCIAL_NETWORKS_IMAGE: string
 }
 export interface IconProps {
     fill?: string;
