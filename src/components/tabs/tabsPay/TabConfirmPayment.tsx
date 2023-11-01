@@ -111,7 +111,7 @@ const TabConfirmPayment = ({setTabsFinished, tabsFinished, onClose}: TabConfirmP
           <p>Esperamos que esta experiencia sea enriquecedora y te ayude a avanzar en tu camino hacia tu éxito profesional.</p>
           <p className={stylesModal.confirm_footer}></p>
           <div className={stylesModal.centered}>
-            <ButtonCall title="Confirmar mi participación" onClick={confirmParticipation} icon={ <WhatsappIcon fill="var(--white-color)" translateY={4}/>}/>
+            <ButtonCall title="ENVIAR PAGO Y CONFIRMAR ASISTENCIA" onClick={confirmParticipation} icon={ <WhatsappIcon fill="var(--white-color)" translateY={4}/>}/>
           </div>
         </div>
       ): (

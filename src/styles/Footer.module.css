@@ -4,9 +4,9 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: var(--footer-bg);
+    padding-top: 5px;
+    padding-bottom: 25px;
+    background-color: var(--banner-bg);
     color: var(--white-color);
 }
 
@@ -50,17 +50,26 @@
     margin-bottom: 2px;
 }
 .brands>span {
-    margin-left: 10px;
-    margin-right: 10px;
     cursor: pointer;
 }
 .copy{
     font-size: var(--small-font-size);
 }
 
+.contact_line{
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid var(--grey-800);
+    margin-top: 10px;
+    margin-bottom: 18px;
+}
+
 @media only screen and (min-width: 600px) {
     .footer{
         flex-direction: row;
         justify-content: space-between;
+    }
+    .contact_line{
+        display: none;
     }
 }
