@@ -8,7 +8,7 @@ import RegistrationList from './views/registrationList/RegistrationList';
 import { HelmetProvider } from 'react-helmet-async';
 // import Soon from './views/soon/Soon';
 
-const App = () => {
+const App = (): JSX.Element => {
   return (
     <HelmetProvider>
       <div>
